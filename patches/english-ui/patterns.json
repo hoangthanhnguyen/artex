@@ -1,0 +1,13 @@
+[
+  { "re": "^版本 · (.+)$", "en": "Version · $1" },
+  { "re": "^\\s*(\\d+)\\s*/\\s*页\\s*$", "en": "$1 / page" },
+  { "re": "^页$", "en": "page" },
+  { "re": "^In (\\d+)（含缓存 (\\d+)）· 出 (\\d+)$", "en": "In $1 (cached $2) · Out $3" },
+  { "re": "^(\\d+) 次请求$", "en": "$1 requests" },
+  { "re": "^累计调用 (\\d+) 次$", "en": "$1 calls in total" },
+  { "re": "^共 (\\d+) 个，点击卡片编辑描述、参数默认值与 Agent 绑定$", "en": "$1 tools. Click a card to edit its description, parameter defaults and agent bindings." },
+  { "re": "^(.+)（未命中）$", "en": "$1 (cache miss)" },
+  { "re": "^Failed to check for updates:仓库 (.+?) 尚未发布任何正式版本$", "en": "Failed to check for updates: repository $1 has not published any stable release yet" },
+  { "re": "^启动自动发现 (.+?) 失败: http 传输缺少 URL$", "en": "Startup auto-discovery of $1 failed: http transport requires a URL" },
+  { "re": "^Database configuration source: 环境变量 ARTEX_PG_DSN$", "en": "Database configuration source: environment variable ARTEX_PG_DSN" }
+]

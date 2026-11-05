@@ -1,0 +1,2766 @@
+[
+ {
+  "re": "^skill 名称无效（取自 SKILL\\.md 的 name 字段）：(.+?)（≤64 字符，字母开头，只能用小写字母/数字/连字符或中文等非 ASCII 字母，不能有空格、点、路径分隔符）$",
+  "en": "Invalid skill name (from the name field of SKILL.md): $1 (64 characters max, must start with a letter, only lowercase letters/digits/hyphens or non-ASCII letters such as Chinese; no spaces, dots or path separators)"
+ },
+ {
+  "re": "^\\[activity\\] task (.+?) 丢弃活动记录\\(该任务累计第 (.+?) 条\\) worker=(.+?) kind=(.+?) tool=(.+?) tuid=(.+?) reason=(.+?) summary=(.+?): (.+?)(.+?)$",
+  "en": "[activity] task $1 dropped activity record (cumulative count $2) worker=$3 kind=$4 tool=$5 tuid=$6 reason=$7 summary=$8: $9$10"
+ },
+ {
+  "re": "^\\[traffic\\] 索引库未启用增量回收（auto_vacuum=(.+?)）：删除流量不会缩小 index\\.sqlite，需要执行一次存储压缩来转换$",
+  "en": "[traffic] index DB has incremental reclaim disabled (auto_vacuum=$1): deleting traffic will not shrink index.sqlite; run one storage compaction to convert"
+ },
+ {
+  "re": "^shell\\(bash 声明\\) / command\\(命令\\) / script\\(Python\\) / http\\(API\\)，共 (.+?) 个，点击卡片编辑$",
+  "en": "shell (bash declaration) / command (command) / script (Python) / http (API), $1 total. Click a card to edit."
+ },
+ {
+  "re": "^task (.+?) 丢弃活动记录\\(该任务累计第 (.+?) 条\\) worker=(.+?) kind=(.+?) tool=(.+?) tuid=(.+?) reason=(.+?) summary=(.+?): (.+?)(.+?)$",
+  "en": "task $1 dropped activity record (cumulative count $2) worker=$3 kind=$4 tool=$5 tuid=$6 reason=$7 summary=$8: $9$10"
+ },
+ {
+  "re": "^\\[activity\\] task (.+?) 写入失败 \\(第 (.+?)/3 次, worker=(.+?) kind=(.+?) tool=(.+?) expID=(.+?)\\): (.+?)$",
+  "en": "[activity] task $1 write failed (attempt $2/3, worker=$3 kind=$4 tool=$5 expID=$6): $7"
+ },
+ {
+  "re": "^索引库未启用增量回收（auto_vacuum=(.+?)）：删除流量不会缩小 index\\.sqlite，需要执行一次存储压缩来转换$",
+  "en": "index DB has incremental reclaim disabled (auto_vacuum=$1): deleting traffic will not shrink index.sqlite; run one storage compaction to convert"
+ },
+ {
+  "re": "^\\[traffic\\] 与 (.+?) 的 MITM 出错，改为透传（该 host 后续直连目标、不再记录，但请求照常）：(.+?)$",
+  "en": "[traffic] MITM for $1 failed, switching to passthrough (this host will connect directly and no longer be recorded, but requests proceed): $2"
+ },
+ {
+  "re": "^\\[seed\\] task (.+?): 未能从 (.+?) 解析出目标 host/IP，不创建站点（请手动配置 scope）$",
+  "en": "[seed] task $1: could not parse target host/IP from $2, not creating site (configure scope manually)"
+ },
+ {
+  "re": "^\\[activity\\] task (.+?) 写入第 (.+?) 次重试成功 \\(worker=(.+?) kind=(.+?) tool=(.+?)\\)$",
+  "en": "[activity] task $1 write succeeded on retry $2 (worker=$3 kind=$4 tool=$5)"
+ },
+ {
+  "re": "^task (.+?) 写入失败 \\(第 (.+?)/3 次, worker=(.+?) kind=(.+?) tool=(.+?) expID=(.+?)\\): (.+?)$",
+  "en": "task $1 write failed (attempt $2/3, worker=$3 kind=$4 tool=$5 expID=$6): $7"
+ },
+ {
+  "re": "^\\[notify\\] 投递失败 channel=(.+?) kind=(.+?) 永久失败=(.+?) 重试耗尽=(.+?) 待重试=(.+?): (.+?)$",
+  "en": "[notify] delivery failed channel=$1 kind=$2 permanent_failures=$3 retries_exhausted=$4 pending_retry=$5: $6"
+ },
+ {
+  "re": "^\\[task-llm\\] task (.+?) 非流式调用失败,(.+?) 后同 provider 重试 \\((.+?)/(.+?)\\): (.+?)$",
+  "en": "[task-llm] task $1 non-streaming call failed, retrying same provider after $2 ($3/$4): $5"
+ },
+ {
+  "re": "^\\[llm-test\\] (.+?) / (.+?) @ (.+?) — 未发出任何 HTTP 请求\\(配置解析或建连即失败\\)$",
+  "en": "[llm-test] $1 / $2 @ $3 - no HTTP request was sent (config parse or connection setup failed)"
+ },
+ {
+  "re": "^\\[config\\] 配置文件: (.+?) \\(不存在 — 将仅尝试环境变量 ARTEX_PG_DSN\\)$",
+  "en": "[config] config file: $1 (does not exist - will only try env var ARTEX_PG_DSN)"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 意图 #(.+?) 因任务超时收尾结束\\(exhausted\\)，写回 (.+?)$",
+  "en": "[worker $1] task $2 intent #$3 ended after task timeout wrap-up (exhausted); persisting $4"
+ },
+ {
+  "re": "^\\[task-llm\\] task (.+?) 提交前流失败,(.+?) 后同 provider 重试 \\((.+?)/(.+?)\\): (.+?)$",
+  "en": "[task-llm] task $1 pre-submit stream failed, retrying same provider after $2 ($3/$4): $5"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 意图 #(.+?) model_error 收场，(.+?) 后重试 \\((.+?)/(.+?)\\)$",
+  "en": "[worker $1] task $2 intent #$3 ended with model_error; retrying after $4 ($5/$6)"
+ },
+ {
+  "re": "^task (.+?): 未能从 (.+?) 解析出目标 host/IP，不创建站点（请手动配置 scope）$",
+  "en": "task $1: could not parse target host/IP from $2, not creating site (configure scope manually)"
+ },
+ {
+  "re": "^与 (.+?) 的 MITM 出错，改为透传（该 host 后续直连目标、不再记录，但请求照常）：(.+?)$",
+  "en": "MITM for $1 failed, switching to passthrough (this host will connect directly and no longer be recorded, but requests proceed): $2"
+ },
+ {
+  "re": "^Failed to check for updates:仓库 (.+?) 尚未发布任何正式版本$",
+  "en": "Failed to check for updates: repository $1 has not published any stable release yet"
+ },
+ {
+  "re": "^\\[notify\\] 渠道回报送达条数 (.+?) 超过投递数 (.+?) channel=(.+?)，按全部送达处理$",
+  "en": "[notify] channel reported $1 delivered exceeding $2 deliveries channel=$3, treating as all delivered"
+ },
+ {
+  "re": "^\\[goals\\] task (.+?): LLM 目标拆解无产出，回退为「原始目标作为单目标」$",
+  "en": "[goals] task $1: LLM goal decomposition returned no results; using the original goal as a single goal"
+ },
+ {
+  "re": "^\\[task-delete\\] task (.+?) 读取持久状态失败，使用内存状态恢复屏障: (.+?)$",
+  "en": "[task-delete] task $1 failed to read persisted state, using in-memory state recovery barrier: $2"
+ },
+ {
+  "re": "^shell/command/script/http，(.+?) / (.+?) 个匹配，点击卡片编辑$",
+  "en": "shell/command/script/http, $1 / $2 matched. Click a card to edit."
+ },
+ {
+  "re": "^\\[update\\] 新版本连续 (.+?) 次启动失败，已回滚到 (.+?)，退出以重启（exit (.+?)）$",
+  "en": "[update] new version failed to start $1 times in a row, rolled back to $2, exiting to restart (exit $3)"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] intent (.+?) 撞步数上限\\(exhausted\\)，本次写回 (.+?)$",
+  "en": "[worker $1] intent $2 reached step limit (exhausted); persisting $3"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] intent (.+?) 运行超时\\(exhausted\\)，收尾后写回 (.+?)$",
+  "en": "[worker $1] intent $2 timed out (exhausted); persisting $3 after wrap-up"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 意图 #(.+?) 因任务已完成而取消\\(stopped\\)$",
+  "en": "[worker $1] task $2 intent #$3 canceled because task completed (stopped)"
+ },
+ {
+  "re": "^\\[engine\\] task (.+?) 重置 (.+?) 个残留 running 意图为 open$",
+  "en": "[engine] task $1 reset $2 leftover running intents to open"
+ },
+ {
+  "re": "^\\[notify\\] 写入推送事件失败 finding=(.+?)（漏洞记录不受影响）: (.+?)$",
+  "en": "[notify] failed to write push event finding=$1 (finding record unaffected): $2"
+ },
+ {
+  "re": "^task (.+?) 写入第 (.+?) 次重试成功 \\(worker=(.+?) kind=(.+?) tool=(.+?)\\)$",
+  "en": "task $1 write succeeded on retry $2 (worker=$3 kind=$4 tool=$5)"
+ },
+ {
+  "re": "^投递失败 channel=(.+?) kind=(.+?) 永久失败=(.+?) 重试耗尽=(.+?) 待重试=(.+?): (.+?)$",
+  "en": "delivery failed channel=$1 kind=$2 permanent_failures=$3 retries_exhausted=$4 pending_retry=$5: $6"
+ },
+ {
+  "re": "^\\[agents\\] seed starter prompt for (.+?) 失败: (.+?)$",
+  "en": "[agents] failed to seed starter prompt for $1: $2"
+ },
+ {
+  "re": "^\\[traffic\\] 全文索引不可用，正文搜索将被禁用（元数据搜索不受影响）：(.+?)$",
+  "en": "[traffic] full-text index unavailable, body search disabled (metadata search unaffected): $1"
+ },
+ {
+  "re": "^\\[llm-test\\] (.+?) / (.+?) @ (.+?) — 尝试 (.+?)/(.+?) HTTP (.+?)\\\\n响应体: (.+?)$",
+  "en": "[llm-test] $1 / $2 @ $3 - attempt $4/$5 HTTP $6\\nresponse body: $7"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 意图 #(.+?) planner 停止落库失败: (.+?)$",
+  "en": "[worker $1] task $2 intent #$3 failed to persist planner stop: $4"
+ },
+ {
+  "re": "^\\[deadline\\] task (.+?) drain 超时\\((.+?)\\),硬取消在跑 run$",
+  "en": "[deadline] task $1 drain timed out ($2); force-canceling active runs"
+ },
+ {
+  "re": "^\\[task-archive\\] 跳过符号链接（归档不支持，不影响其它文件）：(.+?)$",
+  "en": "[task-archive] skipping symlink (not supported by archive, other files unaffected): $1"
+ },
+ {
+  "re": "^\\[traffic\\] 索引空间回收未做完（已用满 (.+?) 步上限），下次删除时继续$",
+  "en": "[traffic] index space reclamation incomplete (hit $1-step limit), will continue on next delete"
+ },
+ {
+  "re": "^配置文件: (.+?) \\(不存在 — 将仅尝试环境变量 ARTEX_PG_DSN\\)$",
+  "en": "config file: $1 (does not exist - will only try env var ARTEX_PG_DSN)"
+ },
+ {
+  "re": "^\\[work (.+?)\\] 空转回合\\(仅思考、无正文无工具\\)已达续跑上限 (.+?)，放行收场$",
+  "en": "[work $1] Idle round (reasoning only, no text or tools) reached continuation limit $2; allowing completion"
+ },
+ {
+  "re": "^\\[planner\\] add_company_scope 默认绑定失败: (.+?)$",
+  "en": "[planner] default binding of add_company_scope failed: $1"
+ },
+ {
+  "re": "^\\[notify\\] 状态变更事件未登记 finding=(.+?) (.+?)→(.+?)（状态已更新）$",
+  "en": "[notify] status-change event not recorded finding=$1 $2->$3 (status already updated)"
+ },
+ {
+  "re": "^\\[traffic\\] 索引空间回收未做完（已用满 (.+?) 预算），下次删除时继续$",
+  "en": "[traffic] index space reclamation incomplete (hit $1 budget), will continue on next delete"
+ },
+ {
+  "re": "^\\[update\\] 新版本启动中（第 (.+?)/(.+?) 次尝试），稳定运行后将确认升级$",
+  "en": "[update] new version starting (attempt $1/$2), upgrade will be confirmed after a stable run"
+ },
+ {
+  "re": "^\\[work (.+?)\\] 空转回合\\(仅思考、无正文无工具\\)，注入续跑指令 \\((.+?)/(.+?)\\)$",
+  "en": "[work $1] Idle round (reasoning only, no text or tools); injecting continuation instructions ($2/$3)"
+ },
+ {
+  "re": "^task (.+?) 意图 #(.+?) 因任务超时收尾结束\\(exhausted\\)，写回 (.+?)$",
+  "en": "task $1 intent #$2 ended after task timeout wrap-up (exhausted); persisting $3"
+ },
+ {
+  "re": "^\\[concurrency\\] task (.+?) 因 LLM 不可用入队失败: (.+?)$",
+  "en": "[concurrency] task $1 failed to queue while LLM is unavailable: $2"
+ },
+ {
+  "re": "^\\[notify\\] 汇总批次中跳过无法解析的快照 delivery=(.+?): (.+?)$",
+  "en": "[notify] skipped unparseable snapshot in digest batch delivery=$1: $2"
+ },
+ {
+  "re": "^\\[seed\\] task (.+?): 目标 (.+?) 是 LLM 网关，拒绝作为渗透目标$",
+  "en": "[seed] task $1: target $2 is an LLM gateway, refusing as a pentest target"
+ },
+ {
+  "re": "^task (.+?) 非流式调用失败,(.+?) 后同 provider 重试 \\((.+?)/(.+?)\\): (.+?)$",
+  "en": "task $1 non-streaming call failed, retrying same provider after $2 ($3/$4): $5"
+ },
+ {
+  "re": "^(.+?) / (.+?) @ (.+?) — 未发出任何 HTTP 请求\\(配置解析或建连即失败\\)$",
+  "en": "$1 / $2 @ $3 - no HTTP request was sent (config parse or connection setup failed)"
+ },
+ {
+  "re": "^\\[update\\] 暂存的新版本未通过校验，已丢弃，继续运行当前版本：(.+?)$",
+  "en": "[update] staged new version failed verification, discarded, continuing with current version: $1"
+ },
+ {
+  "re": "^task (.+?) 意图 #(.+?) model_error 收场，(.+?) 后重试 \\((.+?)/(.+?)\\)$",
+  "en": "task $1 intent #$2 ended with model_error; retrying after $3 ($4/$5)"
+ },
+ {
+  "re": "^\\[deadline\\] task (.+?) 盖章 first_run 失败: (.+?)$",
+  "en": "[deadline] task $1 failed to set first_run: $2"
+ },
+ {
+  "re": "^\\[notify\\] 标记坏快照投递失败 channel=(.+?) ids=(.+?): (.+?)$",
+  "en": "[notify] failed to mark bad-snapshot delivery channel=$1 ids=$2: $3"
+ },
+ {
+  "re": "^task (.+?) 提交前流失败,(.+?) 后同 provider 重试 \\((.+?)/(.+?)\\): (.+?)$",
+  "en": "task $1 pre-submit stream failed, retrying same provider after $2 ($3/$4): $5"
+ },
+ {
+  "re": "^\\[auth\\] JWT key 已从 (.+?) 迁移到 (.+?)（移出可浏览工作区）$",
+  "en": "[auth] JWT key migrated from $1 to $2 (outside the browsable workspace)"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 意图 #(.+?) 超时收尾状态落库失败: (.+?)$",
+  "en": "[worker $1] task $2 intent #$3 failed to persist timeout wrap-up status: $4"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 意图 #(.+?) 被终止\\(stopped\\)$",
+  "en": "[worker $1] task $2 intent #$3 terminated (stopped)"
+ },
+ {
+  "re": "^task (.+?): LLM 目标拆解无产出，回退为「原始目标作为单目标」$",
+  "en": "task $1: LLM goal decomposition returned no results; using the original goal as a single goal"
+ },
+ {
+  "re": "^\\[mcp\\] browser 代理同步: 读取 MCP 列表失败: (.+?)$",
+  "en": "[mcp] Browser proxy sync: failed to read MCP list: $1"
+ },
+ {
+  "re": "^渠道回报送达条数 (.+?) 超过投递数 (.+?) channel=(.+?)，按全部送达处理$",
+  "en": "channel reported $1 delivered exceeding $2 deliveries channel=$3, treating as all delivered"
+ },
+ {
+  "re": "^\\[notify\\] 分段续发排队失败 channel=(.+?) ids=(.+?): (.+?)$",
+  "en": "[notify] failed to queue segmented continuation channel=$1 ids=$2: $3"
+ },
+ {
+  "re": "^\\[notify\\] 标记失败状态出错 channel=(.+?) ids=(.+?): (.+?)$",
+  "en": "[notify] error marking failure state channel=$1 ids=$2: $3"
+ },
+ {
+  "re": "^\\[prompts\\] mainagent 提示词重刷为新默认失败: (.+?)$",
+  "en": "[prompts] failed to re-seed mainagent prompt to new default: $1"
+ },
+ {
+  "re": "^\\[planner\\] report_finding 默认绑定失败: (.+?)$",
+  "en": "[planner] default binding of report_finding failed: $1"
+ },
+ {
+  "re": "^\\[worker\\] add_company_scope 解绑失败: (.+?)$",
+  "en": "[worker] failed to unbind add_company_scope: $1"
+ },
+ {
+  "re": "^(.+?) / (.+?) 个匹配，点击卡片编辑描述、参数默认值与 Agent 绑定$",
+  "en": "$1 / $2 matched. Click a card to edit its description, parameter defaults, and Agent bindings."
+ },
+ {
+  "re": "^程序目录 (.+?) 不可写，无法自动更新（请检查权限或改用手动升级）: (.+?)$",
+  "en": "Program directory $1 is not writable; automatic update is unavailable (check permissions or upgrade manually): $2"
+ },
+ {
+  "re": "^\\[llmpool\\] 轮询链已耗尽\\((.+?) 个配置全部失败\\)，最后错误：(.+?)$",
+  "en": "[llmpool] rotation chain exhausted ($1 configs all failed), last error: $2"
+ },
+ {
+  "re": "^\\[prompts\\] seed (.+?) 跳过: agent 不存在 \\((.+?)\\)$",
+  "en": "[prompts] seed $1 skipped: agent does not exist ($2)"
+ },
+ {
+  "re": "^\\[custom-tool\\] 自动检测到 python 解释器: (.+?)$",
+  "en": "[custom-tool] Python interpreter detected: $1"
+ },
+ {
+  "re": "^\\[notify\\] 跳过 (.+?) 条快照无法解析的投递 channel=(.+?)$",
+  "en": "[notify] skipped $1 deliveries with unparseable snapshots channel=$2"
+ },
+ {
+  "re": "^\\[notify\\] 标记已送达失败 channel=(.+?) ids=(.+?): (.+?)$",
+  "en": "[notify] failed to mark delivered channel=$1 ids=$2: $3"
+ },
+ {
+  "re": "^\\[tools\\] goal_met 解绑 planner 失败: (.+?)$",
+  "en": "[tools] failed to unbind goal_met from planner: $1"
+ },
+ {
+  "re": "^(.+?)(.+?) worker 可用 Read/Bash 按路径打开：\\\\n(.+?)\\\\n$",
+  "en": "$1$2 the worker can open them by path using Read/Bash:\\n$3\\n"
+ },
+ {
+  "re": "^新版本连续 (.+?) 次启动失败，已回滚到 (.+?)，退出以重启（exit (.+?)）$",
+  "en": "new version failed to start $1 times in a row, rolled back to $2, exiting to restart (exit $3)"
+ },
+ {
+  "re": "^\\[update\\] 新版本运行稳定，升级完成（上一版本保留为 (.+?)）$",
+  "en": "[update] new version stable, upgrade complete (previous version kept as $1)"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 意图 #(.+?) 暂停状态落库失败: (.+?)$",
+  "en": "[worker $1] task $2 intent #$3 failed to persist paused status: $4"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 意图 #(.+?) 取消栅栏落库失败: (.+?)$",
+  "en": "[worker $1] task $2 intent #$3 failed to persist cancellation barrier: $4"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 意图 #(.+?) 已停止，等待取消清理$",
+  "en": "[worker $1] task $2 intent #$3 stopped; waiting for cancellation cleanup"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 意图 #(.+?) 任务暂停回退失败: (.+?)$",
+  "en": "[worker $1] task $2 intent #$3 failed to roll back after task pause: $4"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 意图 #(.+?) 终态停止落库失败: (.+?)$",
+  "en": "[worker $1] task $2 intent #$3 failed to persist terminal stopped status: $4"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 意图 #(.+?) 终态 (.+?) 落库失败: (.+?)$",
+  "en": "[worker $1] task $2 intent #$3 failed to persist terminal status $4: $5"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 意图 #(.+?) 结束: (.+?) \\(写回 (.+?)\\)$",
+  "en": "[worker $1] task $2 intent #$3 finished: $4 (persisting $5)"
+ },
+ {
+  "re": "^\\[mcp\\] browser MCP 已挂捕获代理 (.+?) \\(CA (.+?)\\)$",
+  "en": "[mcp] Browser MCP connected to capture proxy $1 (CA $2)"
+ },
+ {
+  "re": "^\\[notify\\] 重排投递失败 channel=(.+?) ids=(.+?): (.+?)$",
+  "en": "[notify] failed to reschedule delivery channel=$1 ids=$2: $3"
+ },
+ {
+  "re": "^\\[prompts\\] planner 提示词重刷为新默认失败: (.+?)$",
+  "en": "[prompts] failed to re-seed planner prompt to new default: $1"
+ },
+ {
+  "re": "^Worker #(.+?) 已删除（原因已记录，规划者将据此重新规划）$",
+  "en": "Worker #$1 deleted (reason recorded, the Planner will re-plan accordingly)"
+ },
+ {
+  "re": "^\\[llmpool\\] LLM 故障转移：(.+?)\\((.+?)\\) → (.+?)\\((.+?)\\)，原因：(.+?)$",
+  "en": "[llmpool] LLM failover: $1($2) -> $3($4), reason: $5"
+ },
+ {
+  "re": "^\\[goalless\\] task (.+?) 收尾落 done 失败: (.+?)$",
+  "en": "[goalless] task $1 failed to persist done after wrap-up: $2"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 意图 #(.+?) 领取后回退失败: (.+?)$",
+  "en": "[worker $1] task $2 intent #$3 failed to roll back after claiming: $4"
+ },
+ {
+  "re": "^intent (.+?) 撞步数上限\\(exhausted\\)，本次写回 (.+?)$",
+  "en": "intent $1 reached step limit (exhausted); persisting $2"
+ },
+ {
+  "re": "^intent (.+?) 运行超时\\(exhausted\\)，收尾后写回 (.+?)$",
+  "en": "intent $1 timed out (exhausted); persisting $2 after wrap-up"
+ },
+ {
+  "re": "^\\[deadline\\] task (.+?) 到达超时上限,进入收尾时序$",
+  "en": "[deadline] task $1 reached timeout; starting wrap-up"
+ },
+ {
+  "re": "^\\[deadline\\] task (.+?) 收尾时已是终态,保留原状态$",
+  "en": "[deadline] task $1 was already terminal during wrap-up; preserving status"
+ },
+ {
+  "re": "^\\[prompts\\] worker 提示词重刷为新默认失败: (.+?)$",
+  "en": "[prompts] failed to re-seed worker prompt to new default: $1"
+ },
+ {
+  "re": "^\\[auto\\] report_finding 默认绑定失败: (.+?)$",
+  "en": "[auto] default binding of report_finding failed: $1"
+ },
+ {
+  "re": "^\\[planner\\] list_assets 默认绑定失败: (.+?)$",
+  "en": "[planner] default binding of list_assets failed: $1"
+ },
+ {
+  "re": "^task (.+?) 重置 (.+?) 个残留 running 意图为 open$",
+  "en": "task $1 reset $2 leftover running intents to open"
+ },
+ {
+  "re": "^给 Worker #(.+?) 发消息，@ 引用记录，调整执行方向…$",
+  "en": "Message Worker #$1, @ to reference records, adjust the execution direction…"
+ },
+ {
+  "re": "^共 (.+?) 个，点击卡片编辑描述、参数默认值与 Agent 绑定$",
+  "en": "$1 total. Click a card to edit its description, parameter defaults, and Agent bindings."
+ },
+ {
+  "re": "^访问 GitHub 失败（可在系统设置里配置全局代理）: (.+?)$",
+  "en": "Failed to reach GitHub (configure a global proxy in system settings): $1"
+ },
+ {
+  "re": "^\\[notify\\] 序列化推送事件失败 finding=(.+?): (.+?)$",
+  "en": "[notify] failed to serialize push event finding=$1: $2"
+ },
+ {
+  "re": "^写入推送事件失败 finding=(.+?)（漏洞记录不受影响）: (.+?)$",
+  "en": "failed to write push event finding=$1 (finding record unaffected): $2"
+ },
+ {
+  "re": "^\\[enrich\\] dnsx 初始化失败，DNS 解析停用：(.+?)$",
+  "en": "[enrich] dnsx init failed, DNS resolution disabled: $1"
+ },
+ {
+  "re": "^task (.+?) 意图 #(.+?) 因任务已完成而取消\\(stopped\\)$",
+  "en": "task $1 intent #$2 canceled because task completed (stopped)"
+ },
+ {
+  "re": "^\\[prompts\\] goals 提示词重刷为新默认失败: (.+?)$",
+  "en": "[prompts] failed to re-seed goals prompt to new default: $1"
+ },
+ {
+  "re": "^seed starter prompt for (.+?) 失败: (.+?)$",
+  "en": "failed to seed starter prompt for $1: $2"
+ },
+ {
+  "re": "^\\[traffic\\] 记录 (.+?) 失败（登记 blob 引用）：(.+?)$",
+  "en": "[traffic] recording $1 failed (register blob ref): $2"
+ },
+ {
+  "re": "^当前有 (.+?) 个任务使用该分类。重命名后会同步更新任务列表。$",
+  "en": "$1 tasks currently use this category. Renaming will update the task list accordingly."
+ },
+ {
+  "re": "^SHA256 不匹配：期望 (.+?)，实际 (.+?)（下载损坏或被篡改）$",
+  "en": "SHA256 mismatch: expected $1, got $2 (download corrupted or tampered with)"
+ },
+ {
+  "re": "^\\[notify\\] 回滚到保存点失败 finding=(.+?): (.+?)$",
+  "en": "[notify] failed to roll back to savepoint finding=$1: $2"
+ },
+ {
+  "re": "^\\[enrich\\] 队列已满，丢弃任务 kind=(.+?) id=(.+?)$",
+  "en": "[enrich] queue full, dropping task kind=$1 id=$2"
+ },
+ {
+  "re": "^\\[update\\] 新版本连续 (.+?) 次启动失败，且回滚失败：(.+?)$",
+  "en": "[update] new version failed to start $1 times in a row, and rollback failed: $2"
+ },
+ {
+  "re": "^空转回合\\(仅思考、无正文无工具\\)已达续跑上限 (.+?)，放行收场$",
+  "en": "Idle round (reasoning only, no text or tools) reached continuation limit $1; allowing completion"
+ },
+ {
+  "re": "^\\[notify\\] 领取实时投递失败 channel=(.+?): (.+?)$",
+  "en": "[notify] failed to claim realtime delivery channel=$1: $2"
+ },
+ {
+  "re": "^\\[notify\\] 判断汇总批次失败 channel=(.+?): (.+?)$",
+  "en": "[notify] failed to determine digest batch channel=$1: $2"
+ },
+ {
+  "re": "^\\[notify\\] 领取汇总批次失败 channel=(.+?): (.+?)$",
+  "en": "[notify] failed to claim digest batch channel=$1: $2"
+ },
+ {
+  "re": "^task (.+?): 目标 (.+?) 是 LLM 网关，拒绝作为渗透目标$",
+  "en": "task $1: target $2 is an LLM gateway, refusing as a pentest target"
+ },
+ {
+  "re": "^全文索引不可用，正文搜索将被禁用（元数据搜索不受影响）：(.+?)$",
+  "en": "full-text index unavailable, body search disabled (metadata search unaffected): $1"
+ },
+ {
+  "re": "^\\[notify\\] 建立保存点失败 finding=(.+?): (.+?)$",
+  "en": "[notify] failed to create savepoint finding=$1: $2"
+ },
+ {
+  "re": "^\\[update\\] 写升级标记失败（失去自动回滚能力）：(.+?)$",
+  "en": "[update] failed to write upgrade marker (lost auto-rollback ability): $1"
+ },
+ {
+  "re": "^\\[update\\] 已换装到 (.+?)，退出以重启（exit (.+?)）$",
+  "en": "[update] swapped to $1, exiting to restart (exit $2)"
+ },
+ {
+  "re": "^空转回合\\(仅思考、无正文无工具\\)，注入续跑指令 \\((.+?)/(.+?)\\)$",
+  "en": "Idle round (reasoning only, no text or tools); injecting continuation instructions ($1/$2)"
+ },
+ {
+  "re": "^task (.+?) 意图 #(.+?) planner 停止落库失败: (.+?)$",
+  "en": "task $1 intent #$2 failed to persist planner stop: $3"
+ },
+ {
+  "re": "^\\[deadline\\] task (.+?) 终局判定目标达成: (.+?)$",
+  "en": "[deadline] task $1 final decision: goal achieved: $2"
+ },
+ {
+  "re": "^\\[llmpool\\] 恢复熔断状态: 配置 #(.+?) 冷却至 (.+?)$",
+  "en": "[llmpool] Restored circuit-breaker status: profile #$1 cooling down until $2"
+ },
+ {
+  "re": "^browser 代理同步: 读取 MCP 列表失败: (.+?)$",
+  "en": "Browser proxy sync: failed to read MCP list: $1"
+ },
+ {
+  "re": "^\\[notify\\] 解析资产名失败 finding=(.+?): (.+?)$",
+  "en": "[notify] failed to resolve asset name finding=$1: $2"
+ },
+ {
+  "re": "^\\[reporter\\] seed prompt 失败: (.+?)$",
+  "en": "[reporter] failed to seed prompt: $1"
+ },
+ {
+  "re": "^\\[task\\] #(.+?) 批量重开 (.+?) 条 blocked 意图$",
+  "en": "[task] #$1 batch-reopened $2 blocked intents"
+ },
+ {
+  "re": "^状态变更事件未登记 finding=(.+?) (.+?)→(.+?)（状态已更新）$",
+  "en": "status-change event not recorded finding=$1 $2->$3 (status already updated)"
+ },
+ {
+  "re": "^task (.+?) 读取持久状态失败，使用内存状态恢复屏障: (.+?)$",
+  "en": "task $1 failed to read persisted state, using in-memory state recovery barrier: $2"
+ },
+ {
+  "re": "^索引空间回收未做完（已用满 (.+?) 步上限），下次删除时继续$",
+  "en": "index space reclamation incomplete (hit $1-step limit), will continue on next delete"
+ },
+ {
+  "re": "^已上传 (.+?) 个文件，绝对路径已追加到描述末尾（可编辑）$",
+  "en": "Uploaded $1 files, absolute paths appended to the end of the description (editable)"
+ },
+ {
+  "re": "^该 Release 没有 (.+?)，无法校验完整性，拒绝升级$",
+  "en": "This release has no $1; cannot verify integrity, refusing to upgrade"
+ },
+ {
+  "re": "^(.+?) / (.+?) @ (.+?) — 尝试 (.+?)/(.+?) HTTP (.+?)\\\\n响应体: (.+?)$",
+  "en": "$1 / $2 @ $3 - attempt $4/$5 HTTP $6\\nresponse body: $7"
+ },
+ {
+  "re": "^新版本启动中（第 (.+?)/(.+?) 次尝试），稳定运行后将确认升级$",
+  "en": "new version starting (attempt $1/$2), upgrade will be confirmed after a stable run"
+ },
+ {
+  "re": "^\\[update\\] 回滚后整理备份失败（不影响运行）：(.+?)$",
+  "en": "[update] failed to tidy backups after rollback (does not affect running): $1"
+ },
+ {
+  "re": "^JWT key 已从 (.+?) 迁移到 (.+?)（移出可浏览工作区）$",
+  "en": "JWT key migrated from $1 to $2 (outside the browsable workspace)"
+ },
+ {
+  "re": "^\\[planner\\] task (.+?) 标记完成落库失败: (.+?)$",
+  "en": "[planner] task $1 failed to persist completed status: $2"
+ },
+ {
+  "re": "^\\[deadline\\] task (.+?) 首次运行,截止于 (.+?)$",
+  "en": "[deadline] task $1 first run; deadline $2"
+ },
+ {
+  "re": "^task (.+?) drain 超时\\((.+?)\\),硬取消在跑 run$",
+  "en": "task $1 drain timed out ($2); force-canceling active runs"
+ },
+ {
+  "re": "^\\[concurrency\\] task (.+?) 启动失败: (.+?)$",
+  "en": "[concurrency] task $1 failed to start: $2"
+ },
+ {
+  "re": "^\\[llmpool\\] LLM 轮询已启用，链路\\((.+?)\\): (.+?)$",
+  "en": "[llmpool] LLM round-robin enabled; chain ($1): $2"
+ },
+ {
+  "re": "^汇总批次中跳过无法解析的快照 delivery=(.+?): (.+?)$",
+  "en": "skipped unparseable snapshot in digest batch delivery=$1: $2"
+ },
+ {
+  "re": "^add_company_scope 默认绑定失败: (.+?)$",
+  "en": "default binding of add_company_scope failed: $1"
+ },
+ {
+  "re": "^\\[update\\] (.+?) → (.+?) 已暂存，即将退出以完成换装$",
+  "en": "[update] $1 -> $2 staged, exiting shortly to complete the swap"
+ },
+ {
+  "re": "^\\[traffic\\] 记录 (.+?) 失败（取 rowid）：(.+?)$",
+  "en": "[traffic] recording $1 failed (get rowid): $2"
+ },
+ {
+  "re": "^索引空间回收未做完（已用满 (.+?) 预算），下次删除时继续$",
+  "en": "index space reclamation incomplete (hit $1 budget), will continue on next delete"
+ },
+ {
+  "re": "^暂存的新版本未通过校验，已丢弃，继续运行当前版本：(.+?)$",
+  "en": "staged new version failed verification, discarded, continuing with current version: $1"
+ },
+ {
+  "re": "^\\[tools\\] 读取工具表失败，按代码默认放行: (.+?)$",
+  "en": "[tools] Failed to read tool table; allowing tools according to code defaults: $1"
+ },
+ {
+  "re": "^\\[planner\\] task (.+?) 规划中…\\((.+?) 触发\\)$",
+  "en": "[planner] task $1 planning... (triggered by $2)"
+ },
+ {
+  "re": "^\\[deadline\\] task (.+?) 收尾完成,终态=(.+?)$",
+  "en": "[deadline] task $1 wrap-up completed; terminal status=$2"
+ },
+ {
+  "re": "^\\[deadline\\] task (.+?) 终局规划出错: (.+?)$",
+  "en": "[deadline] task $1 final planning failed: $2"
+ },
+ {
+  "re": "^browser MCP 已挂捕获代理 (.+?) \\(CA (.+?)\\)$",
+  "en": "Browser MCP connected to capture proxy $1 (CA $2)"
+ },
+ {
+  "re": "^标记坏快照投递失败 channel=(.+?) ids=(.+?): (.+?)$",
+  "en": "failed to mark bad-snapshot delivery channel=$1 ids=$2: $3"
+ },
+ {
+  "re": "^\\[worker\\] (.+?) 从 worker 解绑失败: (.+?)$",
+  "en": "[worker] failed to unbind $1 from worker: $2"
+ },
+ {
+  "re": "^\\[traffic\\] 回收索引空间失败（获取连接）：(.+?)$",
+  "en": "[traffic] failed to reclaim index space (acquire connection): $1"
+ },
+ {
+  "re": "^任务被未归档任务 #(.+?) 直接继承，请先归档依赖任务$",
+  "en": "The task is directly inherited by unarchived task #$1; please archive the dependent task first"
+ },
+ {
+  "re": "^\\[planner\\] task (.+?) 判定目标达成: (.+?)$",
+  "en": "[planner] task $1 goal achieved: $2"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 意图 #(.+?) 已暂停$",
+  "en": "[worker $1] task $2 intent #$3 paused"
+ },
+ {
+  "re": "^\\[deadline\\] task (.+?) 落终态失败: (.+?)$",
+  "en": "[deadline] task $1 failed to persist terminal status: $2"
+ },
+ {
+  "re": "^分段续发排队失败 channel=(.+?) ids=(.+?): (.+?)$",
+  "en": "failed to queue segmented continuation channel=$1 ids=$2: $3"
+ },
+ {
+  "re": "^标记失败状态出错 channel=(.+?) ids=(.+?): (.+?)$",
+  "en": "error marking failure state channel=$1 ids=$2: $3"
+ },
+ {
+  "re": "^goal_met 解绑 planner 失败: (.+?)$",
+  "en": "failed to unbind goal_met from planner: $1"
+ },
+ {
+  "re": "^\\[reporter\\] 创建 agent 失败: (.+?)$",
+  "en": "[reporter] failed to create agent: $1"
+ },
+ {
+  "re": "^add_company_scope 解绑失败: (.+?)$",
+  "en": "failed to unbind add_company_scope: $1"
+ },
+ {
+  "re": "^\\[seed\\] task (.+?): 下发种子意图失败: (.+?)$",
+  "en": "[seed] task $1: failed to dispatch seed intent: $2"
+ },
+ {
+  "re": "^\\[traffic\\] 记录 (.+?) 失败（写全文索引）：(.+?)$",
+  "en": "[traffic] recording $1 failed (write full-text index): $2"
+ },
+ {
+  "re": "^消息已发送给 Worker #(.+?)，已立即继续执行$",
+  "en": "Message sent to Worker #$1, execution has resumed immediately"
+ },
+ {
+  "re": "^已加载 v(.+?) 到编辑器，确认后点「保存为新版本」$",
+  "en": "Loaded v$1 into the editor; after confirming, click \"Save as new version\""
+ },
+ {
+  "re": "^list_projects_data 失败: (.+?)$",
+  "en": "list_projects_data failed: $1"
+ },
+ {
+  "re": "^\\[update\\] 换装失败，继续运行当前版本：(.+?)$",
+  "en": "[update] swap failed, continuing with current version: $1"
+ },
+ {
+  "re": "^task (.+?) 意图 #(.+?) 超时收尾状态落库失败: (.+?)$",
+  "en": "task $1 intent #$2 failed to persist timeout wrap-up status: $3"
+ },
+ {
+  "re": "^task (.+?) 意图 #(.+?) 被终止\\(stopped\\)$",
+  "en": "task $1 intent #$2 terminated (stopped)"
+ },
+ {
+  "re": "^task (.+?) 盖章 first_run 失败: (.+?)$",
+  "en": "task $1 failed to set first_run: $2"
+ },
+ {
+  "re": "^跳过 (.+?) 条快照无法解析的投递 channel=(.+?)$",
+  "en": "skipped $1 deliveries with unparseable snapshots channel=$2"
+ },
+ {
+  "re": "^标记已送达失败 channel=(.+?) ids=(.+?): (.+?)$",
+  "en": "failed to mark delivered channel=$1 ids=$2: $3"
+ },
+ {
+  "re": "^mainagent 提示词重刷为新默认失败: (.+?)$",
+  "en": "failed to re-seed mainagent prompt to new default: $1"
+ },
+ {
+  "re": "^\\[reporter\\] 设置触发运行策略失败: (.+?)$",
+  "en": "[reporter] failed to set trigger run policy: $1"
+ },
+ {
+  "re": "^report_finding 默认绑定失败: (.+?)$",
+  "en": "default binding of report_finding failed: $1"
+ },
+ {
+  "re": "^\\[seed\\] task (.+?): 已下发种子意图 #(.+?)$",
+  "en": "[seed] task $1: dispatched seed intent #$2"
+ },
+ {
+  "re": "^\\[traffic\\] 记录 (.+?) 失败（开启事务）：(.+?)$",
+  "en": "[traffic] recording $1 failed (begin transaction): $2"
+ },
+ {
+  "re": "^\\[traffic\\] 创建 blob 目录失败：(.+?)$",
+  "en": "[traffic] failed to create blob directory: $1"
+ },
+ {
+  "re": "^\\[traffic\\] 清理历史流量目录 (.+?) 失败：(.+?)$",
+  "en": "[traffic] failed to clean up historical traffic directory $1: $2"
+ },
+ {
+  "re": "^LLM 配置已更新，并恢复 (.+?) 条额度阻塞意图$",
+  "en": "LLM configuration updated, and $1 quota-blocked intents restored"
+ },
+ {
+  "re": "^已登记 (.+?) 条范围，关联 (.+?) 项域名/IP 资产$",
+  "en": "Registered $1 scopes, associated with $2 domain/IP assets"
+ },
+ {
+  "re": "^当前版本 (.+?) 不是正式发布版本，已禁用一键更新$",
+  "en": "Current version $1 is not an official release; one-click update is disabled"
+ },
+ {
+  "re": "^skill 已存在：(.+?)（如需覆盖请确认后重试）$",
+  "en": "Skill already exists: $1 (to overwrite, confirm and retry)"
+ },
+ {
+  "re": "^轮询链已耗尽\\((.+?) 个配置全部失败\\)，最后错误：(.+?)$",
+  "en": "rotation chain exhausted ($1 configs all failed), last error: $2"
+ },
+ {
+  "re": "^新版本运行稳定，升级完成（上一版本保留为 (.+?)）$",
+  "en": "new version stable, upgrade complete (previous version kept as $1)"
+ },
+ {
+  "re": "^\\[mcp\\] (.+?) tools/list 失败: (.+?)$",
+  "en": "[mcp] $1 tools/list failed: $2"
+ },
+ {
+  "re": "^seed (.+?) 跳过: agent 不存在 \\((.+?)\\)$",
+  "en": "seed $1 skipped: agent does not exist ($2)"
+ },
+ {
+  "re": "^\\[planner\\] task (.+?) 规划出错: (.+?)$",
+  "en": "[planner] task $1 planning failed: $2"
+ },
+ {
+  "re": "^\\[worker (.+?)\\] task (.+?) 领取意图 #(.+?)$",
+  "en": "[worker $1] task $2 claimed intent #$3"
+ },
+ {
+  "re": "^\\[proxy\\] 全局代理 (.+?) 无效，已忽略: (.+?)$",
+  "en": "[proxy] Global proxy $1 is invalid and was ignored: $2"
+ },
+ {
+  "re": "^\\[mcp\\] browser 代理同步失败: (.+?)$",
+  "en": "[mcp] Browser proxy sync failed: $1"
+ },
+ {
+  "re": "^\\[mcp\\] 启动自动发现: 读取列表失败: (.+?)$",
+  "en": "[mcp] startup auto-discovery: failed to read list: $1"
+ },
+ {
+  "re": "^重排投递失败 channel=(.+?) ids=(.+?): (.+?)$",
+  "en": "failed to reschedule delivery channel=$1 ids=$2: $3"
+ },
+ {
+  "re": "^\\[worker\\] 回看/详情工具补绑失败: (.+?)$",
+  "en": "[worker] failed to bind review/detail tools: $1"
+ },
+ {
+  "re": "^\\[traffic\\] 下载 blob (.+?) 中断：(.+?)$",
+  "en": "[traffic] blob download $1 interrupted: $2"
+ },
+ {
+  "re": "^跳过符号链接（归档不支持，不影响其它文件）：(.+?)$",
+  "en": "skipping symlink (not supported by archive, other files unaffected): $1"
+ },
+ {
+  "re": "^\\[traffic\\] 记录 (.+?) 失败（写索引）：(.+?)$",
+  "en": "[traffic] recording $1 failed (write index): $2"
+ },
+ {
+  "re": "^\\[traffic\\] 记录 (.+?) 失败（写正文）：(.+?)$",
+  "en": "[traffic] recording $1 failed (write body): $2"
+ },
+ {
+  "re": "^\\[auth\\] 新 JWT key 已写入 (.+?)$",
+  "en": "[auth] New JWT key written to $1"
+ },
+ {
+  "re": "^task (.+?) 意图 #(.+?) 暂停状态落库失败: (.+?)$",
+  "en": "task $1 intent #$2 failed to persist paused status: $3"
+ },
+ {
+  "re": "^task (.+?) 意图 #(.+?) 取消栅栏落库失败: (.+?)$",
+  "en": "task $1 intent #$2 failed to persist cancellation barrier: $3"
+ },
+ {
+  "re": "^task (.+?) 意图 #(.+?) 已停止，等待取消清理$",
+  "en": "task $1 intent #$2 stopped; waiting for cancellation cleanup"
+ },
+ {
+  "re": "^task (.+?) 意图 #(.+?) 任务暂停回退失败: (.+?)$",
+  "en": "task $1 intent #$2 failed to roll back after task pause: $3"
+ },
+ {
+  "re": "^task (.+?) 意图 #(.+?) 终态停止落库失败: (.+?)$",
+  "en": "task $1 intent #$2 failed to persist terminal stopped status: $3"
+ },
+ {
+  "re": "^task (.+?) 意图 #(.+?) 终态 (.+?) 落库失败: (.+?)$",
+  "en": "task $1 intent #$2 failed to persist terminal status $3: $4"
+ },
+ {
+  "re": "^task (.+?) 意图 #(.+?) 结束: (.+?) \\(写回 (.+?)\\)$",
+  "en": "task $1 intent #$2 finished: $3 (persisting $4)"
+ },
+ {
+  "re": "^task (.+?) 因 LLM 不可用入队失败: (.+?)$",
+  "en": "task $1 failed to queue while LLM is unavailable: $2"
+ },
+ {
+  "re": "^\\[revive\\] task (.+?) 恢复失败: (.+?)$",
+  "en": "[revive] task $1 failed to resume: $2"
+ },
+ {
+  "re": "^planner 提示词重刷为新默认失败: (.+?)$",
+  "en": "failed to re-seed planner prompt to new default: $1"
+ },
+ {
+  "re": "^\\[reporter\\] 升级触发消息失败: (.+?)$",
+  "en": "[reporter] failed to upgrade trigger message: $1"
+ },
+ {
+  "re": "^\\[task\\] #(.+?) 意图 #(.+?) 已重开\\(重跑\\)$",
+  "en": "[task] #$1 intent #$2 reopened (rerun)"
+ },
+ {
+  "re": "^\\[task\\] 新建任务 #(.+?) «(.+?)» 目标: (.+?)$",
+  "en": "[task] Created task #$1 «$2» goal: $3"
+ },
+ {
+  "re": "^\\[agents\\] 清理 (.+?) 工具绑定失败: (.+?)$",
+  "en": "[agents] failed to clean up $1 tool bindings: $2"
+ },
+ {
+  "re": "^\\[traffic\\] 记录 (.+?) 失败（提交）：(.+?)$",
+  "en": "[traffic] recording $1 failed (commit): $2"
+ },
+ {
+  "re": "^\\[traffic\\] 写 blob (.+?) 失败：(.+?)$",
+  "en": "[traffic] failed to write blob $1: $2"
+ },
+ {
+  "re": "^Worker #(.+?) 及其独占下游已彻底删除(.+?)$",
+  "en": "Worker #$1 and its exclusive downstream have been permanently deleted$2"
+ },
+ {
+  "re": "^序列化推送事件失败 finding=(.+?): (.+?)$",
+  "en": "failed to serialize push event finding=$1: $2"
+ },
+ {
+  "re": "^dnsx 初始化失败，DNS 解析停用：(.+?)$",
+  "en": "dnsx init failed, DNS resolution disabled: $1"
+ },
+ {
+  "re": "^\\[llmpool\\] 配置 (.+?)\\((.+?)\\) 已熔断：(.+?)$",
+  "en": "[llmpool] config $1($2) circuit-broken: $3"
+ },
+ {
+  "re": "^LLM 故障转移：(.+?)\\((.+?)\\) → (.+?)\\((.+?)\\)，原因：(.+?)$",
+  "en": "LLM failover: $1($2) -> $3($4), reason: $5"
+ },
+ {
+  "re": "^\\[prompts\\] seed (.+?) 失败: (.+?)$",
+  "en": "[prompts] seed $1 failed: $2"
+ },
+ {
+  "re": "^\\[planner\\] task (.+?) 规划完成$",
+  "en": "[planner] task $1 planning completed"
+ },
+ {
+  "re": "^task (.+?) 意图 #(.+?) 领取后回退失败: (.+?)$",
+  "en": "task $1 intent #$2 failed to roll back after claiming: $3"
+ },
+ {
+  "re": "^\\[llmpool\\] 熔断状态落库失败: (.+?)$",
+  "en": "[llmpool] Failed to persist circuit-breaker status: $1"
+ },
+ {
+  "re": "^\\[custom-tool\\] 加载失败: (.+?)$",
+  "en": "[custom-tool] load failed: $1"
+ },
+ {
+  "re": "^worker 提示词重刷为新默认失败: (.+?)$",
+  "en": "failed to re-seed worker prompt to new default: $1"
+ },
+ {
+  "re": "^\\[reporter\\] 读取触发器失败: (.+?)$",
+  "en": "[reporter] failed to read trigger: $1"
+ },
+ {
+  "re": "^\\[reporter\\] 创建触发器失败: (.+?)$",
+  "en": "[reporter] failed to create trigger: $1"
+ },
+ {
+  "re": "^list_assets 默认绑定失败: (.+?)$",
+  "en": "default binding of list_assets failed: $1"
+ },
+ {
+  "re": "^#(.+?) 批量重开 (.+?) 条 blocked 意图$",
+  "en": "#$1 batch-reopened $2 blocked intents"
+ },
+ {
+  "re": "^\\[agents\\] 清理 (.+?) 触发器失败: (.+?)$",
+  "en": "[agents] failed to clean up $1 triggers: $2"
+ },
+ {
+  "re": "^\\[traffic\\] 截断 WAL 失败：(.+?)$",
+  "en": "[traffic] failed to truncate WAL: $1"
+ },
+ {
+  "re": "^已创建高优先级 Worker 意图 #(.+?)$",
+  "en": "Created high-priority Worker intent #$1"
+ },
+ {
+  "re": "^Worker #(.+?) 已恢复，等待重新领取$",
+  "en": "Worker #$1 resumed, waiting to be re-claimed"
+ },
+ {
+  "re": "^（含 (.+?) 意图 / (.+?) 事实 / (.+?) 漏洞）$",
+  "en": "(includes $1 intents / $2 facts / $3 findings)"
+ },
+ {
+  "re": "^已开启并发限制：最多同时运行 (.+?) 个任务$",
+  "en": "Concurrency limit enabled: at most $1 tasks running at the same time"
+ },
+ {
+  "re": "^已新建：(.+?)（在卡片上「设为激活」以启用）$",
+  "en": "Created: $1 (click \"Set as active\" on the card to enable)"
+ },
+ {
+  "re": "^已发出测试消息（(.+?) ms），请到群里确认$",
+  "en": "Test message sent ($1 ms), please confirm in the group"
+ },
+ {
+  "re": "^该版本没有提供 (.+?)/(.+?) 的发布包（缺少 (.+?)）$",
+  "en": "This version does not provide a release package for $1/$2 (missing $3)"
+ },
+ {
+  "re": "^下载不完整：期望 (.+?) 字节，实际 (.+?) 字节$",
+  "en": "Download incomplete: expected $1 bytes, got $2 bytes"
+ },
+ {
+  "re": "^请为复测 Agent 启用并绑定工具：(.+?)$",
+  "en": "Enable and bind tools for the retest agent: $1"
+ },
+ {
+  "re": "^\\[config\\] skill 目录: (.+?)$",
+  "en": "[config] skill directory: $1"
+ },
+ {
+  "re": "^回滚到保存点失败 finding=(.+?): (.+?)$",
+  "en": "failed to roll back to savepoint finding=$1: $2"
+ },
+ {
+  "re": "^队列已满，丢弃任务 kind=(.+?) id=(.+?)$",
+  "en": "queue full, dropping task kind=$1 id=$2"
+ },
+ {
+  "re": "^新版本连续 (.+?) 次启动失败，且回滚失败：(.+?)$",
+  "en": "new version failed to start $1 times in a row, and rollback failed: $2"
+ },
+ {
+  "re": "^task (.+?) 收尾落 done 失败: (.+?)$",
+  "en": "task $1 failed to persist done after wrap-up: $2"
+ },
+ {
+  "re": "^task (.+?) 到达超时上限,进入收尾时序$",
+  "en": "task $1 reached timeout; starting wrap-up"
+ },
+ {
+  "re": "^task (.+?) 收尾时已是终态,保留原状态$",
+  "en": "task $1 was already terminal during wrap-up; preserving status"
+ },
+ {
+  "re": "^\\[llmpool\\] 读取轮询链失败: (.+?)$",
+  "en": "[llmpool] Failed to read round-robin chain: $1"
+ },
+ {
+  "re": "^领取实时投递失败 channel=(.+?): (.+?)$",
+  "en": "failed to claim realtime delivery channel=$1: $2"
+ },
+ {
+  "re": "^判断汇总批次失败 channel=(.+?): (.+?)$",
+  "en": "failed to determine digest batch channel=$1: $2"
+ },
+ {
+  "re": "^领取汇总批次失败 channel=(.+?): (.+?)$",
+  "en": "failed to claim digest batch channel=$1: $2"
+ },
+ {
+  "re": "^goals 提示词重刷为新默认失败: (.+?)$",
+  "en": "failed to re-seed goals prompt to new default: $1"
+ },
+ {
+  "re": "^\\[reporter\\] 绑定工具失败: (.+?)$",
+  "en": "[reporter] failed to bind tools: $1"
+ },
+ {
+  "re": "^\\[seed\\] task (.+?): 目标站点 (.+?)$",
+  "en": "[seed] task $1: target site $2"
+ },
+ {
+  "re": "^\\[skills\\] 读取调用统计失败: (.+?)$",
+  "en": "[skills] failed to read call stats: $1"
+ },
+ {
+  "re": "^记录 (.+?) 失败（登记 blob 引用）：(.+?)$",
+  "en": "recording $1 failed (register blob ref): $2"
+ },
+ {
+  "re": "^\\[traffic\\] 回收索引空间失败：(.+?)$",
+  "en": "[traffic] failed to reclaim index space: $1"
+ },
+ {
+  "re": "^已创建企业，添加 (.+?) 条范围；(.+?) 行无效$",
+  "en": "Enterprise created, added $1 ranges; $2 invalid lines"
+ },
+ {
+  "re": "^编辑触发器 #(.+?)（改完点「保存修改」）$",
+  "en": "Edit trigger #$1 (click \"Save changes\" when done)"
+ },
+ {
+  "re": "^(.+?) 未收录 (.+?)，拒绝安装未经校验的二进制$",
+  "en": "$1 does not list $2; refusing to install an unverified binary"
+ },
+ {
+  "re": "^发布包内的可执行文件超过 (.+?)，拒绝解压$",
+  "en": "The executable in the release archive exceeds $1; refusing to extract"
+ },
+ {
+  "re": "^关联企业无效：最多选择 (.+?) 个有效企业$",
+  "en": "Invalid linked companies: at most $1 valid companies can be selected"
+ },
+ {
+  "re": "^建立保存点失败 finding=(.+?): (.+?)$",
+  "en": "failed to create savepoint finding=$1: $2"
+ },
+ {
+  "re": "^写升级标记失败（失去自动回滚能力）：(.+?)$",
+  "en": "failed to write upgrade marker (lost auto-rollback ability): $1"
+ },
+ {
+  "re": "^已换装到 (.+?)，退出以重启（exit (.+?)）$",
+  "en": "swapped to $1, exiting to restart (exit $2)"
+ },
+ {
+  "re": "^\\[update\\] 更新升级标记失败：(.+?)$",
+  "en": "[update] failed to update upgrade marker: $1"
+ },
+ {
+  "re": "^\\[update\\] 清除升级标记失败：(.+?)$",
+  "en": "[update] failed to clear upgrade marker: $1"
+ },
+ {
+  "re": "^\\[tools\\] seed (.+?) 失败: (.+?)$",
+  "en": "[tools] seed $1 failed: $2"
+ },
+ {
+  "re": "^自动检测到 python 解释器: (.+?)$",
+  "en": "Python interpreter detected: $1"
+ },
+ {
+  "re": "^\\[mcp\\] (.+?) 发现 (.+?) 个工具并已缓存$",
+  "en": "[mcp] $1 discovered $2 tools and cached them"
+ },
+ {
+  "re": "^\\[mcp\\] 启动自动发现 (.+?) 失败: (.+?)$",
+  "en": "[mcp] startup auto-discovery of $1 failed: $2"
+ },
+ {
+  "re": "^解析资产名失败 finding=(.+?): (.+?)$",
+  "en": "failed to resolve asset name finding=$1: $2"
+ },
+ {
+  "re": "^\\[tools\\] 读取调用统计失败: (.+?)$",
+  "en": "[tools] failed to read call stats: $1"
+ },
+ {
+  "re": "^\\[mcp\\] (.+?) 添加后工具发现失败: (.+?)$",
+  "en": "[mcp] tool discovery after adding $1 failed: $2"
+ },
+ {
+  "re": "^将“(.+?)”从当前任务的测试资产中移出。$",
+  "en": "Remove \"$1\" from the current task's test assets."
+ },
+ {
+  "re": "^删除 LLM 请求/响应记录 (.+?) 条$",
+  "en": "Deleted $1 LLM request/response records"
+ },
+ {
+  "re": "^搜索测试成功 · (.+?) 返回 (.+?) 条结果$",
+  "en": "Search test succeeded · $1 returned $2 results"
+ },
+ {
+  "re": "^(.+?)\\\\n\\\\n是否覆盖同名 Skill？$",
+  "en": "$1\\n\\nOverwrite the Skill with the same name?"
+ },
+ {
+  "re": "^正在加载审批 #(.+?) 所在的对话位置…$",
+  "en": "Loading the conversation position of approval #$1…"
+ },
+ {
+  "re": "^agent_key 最多 (.+?) 个字符$",
+  "en": "agent_key is limited to $1 characters"
+ },
+ {
+  "re": "^task_ids 数量必须为 1-(.+?)$",
+  "en": "task_ids count must be between 1 and $1"
+ },
+ {
+  "re": "^回滚后整理备份失败（不影响运行）：(.+?)$",
+  "en": "failed to tidy backups after rollback (does not affect running): $1"
+ },
+ {
+  "re": "^读取工具表失败，按代码默认放行: (.+?)$",
+  "en": "Failed to read tool table; allowing tools according to code defaults: $1"
+ },
+ {
+  "re": "^恢复熔断状态: 配置 #(.+?) 冷却至 (.+?)$",
+  "en": "Restored circuit-breaker status: profile #$1 cooling down until $2"
+ },
+ {
+  "re": "^\\[notify\\] 分派事件失败: (.+?)$",
+  "en": "[notify] failed to dispatch event: $1"
+ },
+ {
+  "re": "^\\[notify\\] 读取渠道失败: (.+?)$",
+  "en": "[notify] failed to load channels: $1"
+ },
+ {
+  "re": "^task (.+?): 下发种子意图失败: (.+?)$",
+  "en": "task $1: failed to dispatch seed intent: $2"
+ },
+ {
+  "re": "^(.+?) → (.+?) 已暂存，即将退出以完成换装$",
+  "en": "$1 -> $2 staged, exiting shortly to complete the swap"
+ },
+ {
+  "re": "^\\[traffic\\] 压实索引失败：(.+?)$",
+  "en": "[traffic] failed to compact index: $1"
+ },
+ {
+  "re": "^删除选中的 (.+?) 个目标的全部流量？$",
+  "en": "Delete all traffic for the selected $1 targets?"
+ },
+ {
+  "re": "^已安装 Skill：(.+?)（(.+?) 个文件）$",
+  "en": "Installed Skill: $1 ($2 files)"
+ },
+ {
+  "re": "^(.+?) tools/list 失败: (.+?)$",
+  "en": "$1 tools/list failed: $2"
+ },
+ {
+  "re": "^task (.+?) 标记完成落库失败: (.+?)$",
+  "en": "task $1 failed to persist completed status: $2"
+ },
+ {
+  "re": "^task (.+?) 终局判定目标达成: (.+?)$",
+  "en": "task $1 final decision: goal achieved: $2"
+ },
+ {
+  "re": "^LLM 轮询已启用，链路\\((.+?)\\): (.+?)$",
+  "en": "LLM round-robin enabled; chain ($1): $2"
+ },
+ {
+  "re": "^browser 代理同步失败: (.+?)$",
+  "en": "Browser proxy sync failed: $1"
+ },
+ {
+  "re": "^启动自动发现: 读取列表失败: (.+?)$",
+  "en": "startup auto-discovery: failed to read list: $1"
+ },
+ {
+  "re": "^seed prompt 失败: (.+?)$",
+  "en": "failed to seed prompt: $1"
+ },
+ {
+  "re": "^(.+?) 从 worker 解绑失败: (.+?)$",
+  "en": "failed to unbind $1 from worker: $2"
+ },
+ {
+  "re": "^task (.+?): 已下发种子意图 #(.+?)$",
+  "en": "task $1: dispatched seed intent #$2"
+ },
+ {
+  "re": "^记录 (.+?) 失败（取 rowid）：(.+?)$",
+  "en": "recording $1 failed (get rowid): $2"
+ },
+ {
+  "re": "^已删除企业，同时删除 (.+?) 条资产$",
+  "en": "Deleted enterprise and $1 assets"
+ },
+ {
+  "re": "^任务 (.+?) 已被删除、归档或不存在$",
+  "en": "Task $1 has been deleted, archived, or does not exist"
+ },
+ {
+  "re": "^发现时间当前(.+?)，点击切换排序方向$",
+  "en": "Discovery time is currently $1; click to toggle sort direction"
+ },
+ {
+  "re": "^输入 (.+?) · 缓存 (.+?) · 输出 (.+?)$",
+  "en": "Input $1 · Cache $2 · Output $3"
+ },
+ {
+  "re": "^已将 (.+?) 个归档加入永久删除队列$",
+  "en": "Added $1 archives to the permanent deletion queue"
+ },
+ {
+  "re": "^(.+?) · (.+?) 次 · (.+?) tokens$",
+  "en": "$1 · $2 calls · $3 tokens"
+ },
+ {
+  "re": "^已展开审批 #(.+?) 对应的工具调用$",
+  "en": "Expanded the tool call for approval #$1"
+ },
+ {
+  "re": "^已显示 (.+?) 条，向下滚动加载更多$",
+  "en": "Showing $1 entries, scroll down to load more"
+ },
+ {
+  "re": "^（demo）(.+?) 的下载内容示例。$",
+  "en": "(demo) Sample download content for $1."
+ },
+ {
+  "re": "^拒绝非 GitHub 域名: (.+?)$",
+  "en": "Refusing non-GitHub host: $1"
+ },
+ {
+  "re": "^解析 Release 失败: (.+?)$",
+  "en": "Failed to parse release: $1"
+ },
+ {
+  "re": "^新版本无法在当前系统上运行: (.+?)$",
+  "en": "The new version cannot run on this system: $1"
+ },
+ {
+  "re": "^解析上传失败或超出大小限制: (.+?)$",
+  "en": "Failed to parse the upload or exceeded the size limit: $1"
+ },
+ {
+  "re": "^读取 SKILL\\.md 失败：(.+?)$",
+  "en": "Failed to read SKILL.md: $1"
+ },
+ {
+  "re": "^list_tasks 失败: (.+?)$",
+  "en": "list_tasks failed: $1"
+ },
+ {
+  "re": "^\\[config\\] 配置文件: (.+?)$",
+  "en": "[config] config file: $1"
+ },
+ {
+  "re": "^task (.+?) 规划中…\\((.+?) 触发\\)$",
+  "en": "task $1 planning... (triggered by $2)"
+ },
+ {
+  "re": "^task (.+?) 首次运行,截止于 (.+?)$",
+  "en": "task $1 first run; deadline $2"
+ },
+ {
+  "re": "^\\[auto\\] 默认绑定失败: (.+?)$",
+  "en": "[auto] default binding failed: $1"
+ },
+ {
+  "re": "^回收索引空间失败（获取连接）：(.+?)$",
+  "en": "failed to reclaim index space (acquire connection): $1"
+ },
+ {
+  "re": "^深入意图 #(.+?) 已进入任务队列$",
+  "en": "Deep intent #$1 has entered the task queue"
+ },
+ {
+  "re": "^主 Agent · 会话 #(.+?)$",
+  "en": "Main Agent · Session #$1"
+ },
+ {
+  "re": "^给 Worker #(.+?) 发消息$",
+  "en": "Message Worker #$1"
+ },
+ {
+  "re": "^已更新到 (.+?)，正在重新加载页面$",
+  "en": "Updated to $1, reloading page"
+ },
+ {
+  "re": "^拒绝非 HTTPS 地址: (.+?)$",
+  "en": "Refusing non-HTTPS address: $1"
+ },
+ {
+  "re": "^仓库 (.+?) 尚未发布任何正式版本$",
+  "en": "Repository $1 has not published any stable release yet"
+ },
+ {
+  "re": "^请求体不是合法 JSON: (.+?)$",
+  "en": "Request body is not valid JSON: $1"
+ },
+ {
+  "re": "^解析上传失败或超出大小限制：(.+?)$",
+  "en": "Failed to parse the upload or exceeded the size limit: $1"
+ },
+ {
+  "re": "^\\[update\\] 跳过自举：(.+?)$",
+  "en": "[update] skipping bootstrap: $1"
+ },
+ {
+  "re": "^换装失败，继续运行当前版本：(.+?)$",
+  "en": "swap failed, continuing with current version: $1"
+ },
+ {
+  "re": "^新 JWT key 已写入 (.+?)$",
+  "en": "New JWT key written to $1"
+ },
+ {
+  "re": "^task (.+?) 判定目标达成: (.+?)$",
+  "en": "task $1 goal achieved: $2"
+ },
+ {
+  "re": "^task (.+?) 意图 #(.+?) 已暂停$",
+  "en": "task $1 intent #$2 paused"
+ },
+ {
+  "re": "^task (.+?) 收尾完成,终态=(.+?)$",
+  "en": "task $1 wrap-up completed; terminal status=$2"
+ },
+ {
+  "re": "^task (.+?) 终局规划出错: (.+?)$",
+  "en": "task $1 final planning failed: $2"
+ },
+ {
+  "re": "^\\[pg\\] 数据库配置来源: (.+?)$",
+  "en": "[pg] Database configuration source: $1"
+ },
+ {
+  "re": "^全局代理 (.+?) 无效，已忽略: (.+?)$",
+  "en": "Global proxy $1 is invalid and was ignored: $2"
+ },
+ {
+  "re": "^#(.+?) 意图 #(.+?) 已重开\\(重跑\\)$",
+  "en": "#$1 intent #$2 reopened (rerun)"
+ },
+ {
+  "re": "^新建任务 #(.+?) «(.+?)» 目标: (.+?)$",
+  "en": "Created task #$1 «$2» goal: $3"
+ },
+ {
+  "re": "^\\[update\\] 更新失败：(.+?)$",
+  "en": "[update] update failed: $1"
+ },
+ {
+  "re": "^记录 (.+?) 失败（写全文索引）：(.+?)$",
+  "en": "recording $1 failed (write full-text index): $2"
+ },
+ {
+  "re": "^发现新版本 (.+?)，点击前往更新$",
+  "en": "New version $1 available, click to update"
+ },
+ {
+  "re": "^已创建企业，添加 (.+?) 条范围$",
+  "en": "Enterprise created, added $1 ranges"
+ },
+ {
+  "re": "^同步完成，共入库 (.+?) 条资产$",
+  "en": "Sync complete, $1 assets imported"
+ },
+ {
+  "re": "^(.+?)；部分外部数据清理未完成：(.+?)$",
+  "en": "$1; some external data cleanup was not completed: $2"
+ },
+ {
+  "re": "^(.+?)；部分外部数据清理未完成：(.+?)$",
+  "en": "$1; some external data cleanup was not completed: $2"
+ },
+ {
+  "re": "^已将 (.+?) 个任务加入归档队列$",
+  "en": "Added $1 tasks to the archive queue"
+ },
+ {
+  "re": "^已将 (.+?) 个任务加入还原队列$",
+  "en": "Added $1 tasks to the restore queue"
+ },
+ {
+  "re": "^当前有 (.+?) 个任务尚未分类。$",
+  "en": "$1 tasks are currently uncategorized."
+ },
+ {
+  "re": "^确定删除资产拦截规则「(.+?)」？$",
+  "en": "Delete asset blocking rule \"$1\"?"
+ },
+ {
+  "re": "^ · 默认限流 (.+?) 条/分钟$",
+  "en": " · Default rate limit $1 msgs/min"
+ },
+ {
+  "re": "^已关联 (.+?) 条流量到漏洞 #(.+?)$",
+  "en": "Linked $1 traffic entries to vulnerability #$2"
+ },
+ {
+  "re": "^\\[mcp\\] (.+?) 连接失败: (.+?)$",
+  "en": "[mcp] $1 connection failed: $2"
+ },
+ {
+  "re": "^task (.+?) 落终态失败: (.+?)$",
+  "en": "task $1 failed to persist terminal status: $2"
+ },
+ {
+  "re": "^创建 agent 失败: (.+?)$",
+  "en": "failed to create agent: $1"
+ },
+ {
+  "re": "^回看/详情工具补绑失败: (.+?)$",
+  "en": "failed to bind review/detail tools: $1"
+ },
+ {
+  "re": "^记录 (.+?) 失败（开启事务）：(.+?)$",
+  "en": "recording $1 failed (begin transaction): $2"
+ },
+ {
+  "re": "^创建 blob 目录失败：(.+?)$",
+  "en": "failed to create blob directory: $1"
+ },
+ {
+  "re": "^清理历史流量目录 (.+?) 失败：(.+?)$",
+  "en": "failed to clean up historical traffic directory $1: $2"
+ },
+ {
+  "re": "^Worker #(.+?) 已暂停$",
+  "en": "Worker #$1 paused"
+ },
+ {
+  "re": "^Worker 操作失败：(.+?)$",
+  "en": "Worker operation failed: $1"
+ },
+ {
+  "re": "^任务 #(.+?) 已进入归档队列$",
+  "en": "Task #$1 added to the archive queue"
+ },
+ {
+  "re": "^已将 (.+?) 个任务移动到「(.+?)」$",
+  "en": "Moved $1 tasks to \"$2\""
+ },
+ {
+  "re": "^连接成功 · (.+?)ms · (.+?)$",
+  "en": "Connected · $1ms · $2"
+ },
+ {
+  "re": "^已设置（(.+?)），留空保持不变$",
+  "en": "Already set ($1); leave blank to keep unchanged"
+ },
+ {
+  "re": "^(.+?) 个不存在的 skill$",
+  "en": "$1 nonexistent skills"
+ },
+ {
+  "re": "^被调用 (.+?) 次 · 最近 (.+?)$",
+  "en": "Invoked $1 times · Last $2"
+ },
+ {
+  "re": "^(.+?) 内容为空或格式无法识别$",
+  "en": "$1 is empty or has an unrecognized format"
+ },
+ {
+  "re": "^ids 数量必须为 1-(.+?)$",
+  "en": "ids count must be between 1 and $1"
+ },
+ {
+  "re": "^task (.+?) 规划出错: (.+?)$",
+  "en": "task $1 planning failed: $2"
+ },
+ {
+  "re": "^task (.+?) 领取意图 #(.+?)$",
+  "en": "task $1 claimed intent #$2"
+ },
+ {
+  "re": "^task (.+?) 启动失败: (.+?)$",
+  "en": "task $1 failed to start: $2"
+ },
+ {
+  "re": "^task (.+?) 恢复失败: (.+?)$",
+  "en": "task $1 failed to resume: $2"
+ },
+ {
+  "re": "^(.+?) 发现 (.+?) 个工具并已缓存$",
+  "en": "$1 discovered $2 tools and cached them"
+ },
+ {
+  "re": "^启动自动发现 (.+?) 失败: (.+?)$",
+  "en": "startup auto-discovery of $1 failed: $2"
+ },
+ {
+  "re": "^设置触发运行策略失败: (.+?)$",
+  "en": "failed to set trigger run policy: $1"
+ },
+ {
+  "re": "^task (.+?): 目标站点 (.+?)$",
+  "en": "task $1: target site $2"
+ },
+ {
+  "re": "^下载 blob (.+?) 中断：(.+?)$",
+  "en": "blob download $1 interrupted: $2"
+ },
+ {
+  "re": "^清理 (.+?) 工具绑定失败: (.+?)$",
+  "en": "failed to clean up $1 tool bindings: $2"
+ },
+ {
+  "re": "^(.+?) 添加后工具发现失败: (.+?)$",
+  "en": "tool discovery after adding $1 failed: $2"
+ },
+ {
+  "re": "^记录 (.+?) 失败（写索引）：(.+?)$",
+  "en": "recording $1 failed (write index): $2"
+ },
+ {
+  "re": "^记录 (.+?) 失败（写正文）：(.+?)$",
+  "en": "recording $1 failed (write body): $2"
+ },
+ {
+  "re": "^消息不能超过 (.+?) 个字符$",
+  "en": "Message cannot exceed $1 characters"
+ },
+ {
+  "re": "^解除共享资产关联 (.+?) 条$",
+  "en": "Detached $1 shared assets"
+ },
+ {
+  "re": "^(.+?)当前(.+?)，点击切换排序方向$",
+  "en": "$1 is currently $2, click to toggle sort direction"
+ },
+ {
+  "re": "^该分类包含 (.+?) 个任务。$",
+  "en": "This category contains $1 tasks."
+ },
+ {
+  "re": "^最多关联 (.+?) 个来源任务$",
+  "en": "You can link at most $1 source tasks"
+ },
+ {
+  "re": "^已删除 Agent「(.+?)」$",
+  "en": "Deleted Agent “$1”"
+ },
+ {
+  "re": "^已创建 Agent「(.+?)」$",
+  "en": "Created Agent “$1”"
+ },
+ {
+  "re": "^确定更新到 (.+?)？\\\\n\\\\n$",
+  "en": "Update to $1?\\n\\n"
+ },
+ {
+  "re": "^删除 Skill「(.+?)」？$",
+  "en": "Delete Skill \"$1\"?"
+ },
+ {
+  "re": "^已恢复为内置默认（v(.+?)）$",
+  "en": "Restored to built-in default (v$1)"
+ },
+ {
+  "re": "^定位审批 #(.+?) 的来源：(.+?)$",
+  "en": "Locate the source of approval #$1: $2"
+ },
+ {
+  "re": "^计算新二进制校验和: (.+?)$",
+  "en": "Computing the checksum of the new binary: $1"
+ },
+ {
+  "re": "^发布包内的 (.+?) 是空文件$",
+  "en": "$1 inside the release archive is an empty file"
+ },
+ {
+  "re": "^关联任务最多选择 (.+?) 个$",
+  "en": "You can link at most $1 tasks"
+ },
+ {
+  "re": "^非内置工具或不存在: (.+?)$",
+  "en": "Not a built-in tool, or does not exist: $1"
+ },
+ {
+  "re": "^任务名称最多 (.+?) 个字符$",
+  "en": "Task name is limited to $1 characters"
+ },
+ {
+  "re": "^清理 (.+?) 触发器失败: (.+?)$",
+  "en": "failed to clean up $1 triggers: $2"
+ },
+ {
+  "re": "^记录 (.+?) 失败（提交）：(.+?)$",
+  "en": "recording $1 failed (commit): $2"
+ },
+ {
+  "re": "^写 blob (.+?) 失败：(.+?)$",
+  "en": "failed to write blob $1: $2"
+ },
+ {
+  "re": "^范围已更新，共 (.+?) 条$",
+  "en": "Ranges updated, $1 total"
+ },
+ {
+  "re": "^读取数据源状态失败：(.+?)$",
+  "en": "Failed to read data source status: $1"
+ },
+ {
+  "re": "^已将 (.+?) 移出当前任务$",
+  "en": "Removed $1 from the current task"
+ },
+ {
+  "re": "^任务 #(.+?) 已取消置顶$",
+  "en": "Task #$1 unpinned"
+ },
+ {
+  "re": "^任务 #(.+?) 已移至「(.+?)」$",
+  "en": "Task #$1 moved to \"$2\""
+ },
+ {
+  "re": "^异常 · 失败 (.+?) 次$",
+  "en": "Abnormal · failed $1 times"
+ },
+ {
+  "re": "^已删除 Skill：(.+?)$",
+  "en": "Deleted Skill: $1"
+ },
+ {
+  "re": "^已恢复「(.+?)」为代码默认$",
+  "en": "Restored \"$1\" to code default"
+ },
+ {
+  "re": "^(.+?) Skill「(.+?)」可见$",
+  "en": "$1 Skill \"$2\" visibility"
+ },
+ {
+  "re": "^继承自任务 #(.+?)，只读$",
+  "en": "Inherited from task #$1, read-only"
+ },
+ {
+  "re": "^GitHub 返回 (.+?)$",
+  "en": "GitHub returned $1"
+ },
+ {
+  "re": "^渠道类型无效，可选：(.+?)$",
+  "en": "Invalid channel type; available: $1"
+ },
+ {
+  "re": "^关联任务 #(.+?) 不存在$",
+  "en": "Linked task #$1 does not exist"
+ },
+ {
+  "re": "^任务级拦截规则无效：(.+?)$",
+  "en": "Invalid task-level intercept rule: $1"
+ },
+ {
+  "re": "^压缩包含非法路径 (.+?)：(.+?)$",
+  "en": "Archive contains an illegal path $1: $2"
+ },
+ {
+  "re": "^解析项目列表失败: (.+?)$",
+  "en": "Failed to parse the project list: $1"
+ },
+ {
+  "re": "^解析任务列表失败: (.+?)$",
+  "en": "Failed to parse the task list: $1"
+ },
+ {
+  "re": "^拦截/允许规则无效：(.+?)$",
+  "en": "Invalid intercept/allow rule: $1"
+ },
+ {
+  "re": "^skill 目录: (.+?)$",
+  "en": "skill directory: $1"
+ },
+ {
+  "re": "^配置 (.+?)\\((.+?)\\) 已熔断：(.+?)$",
+  "en": "config $1($2) circuit-broken: $3"
+ },
+ {
+  "re": "^seed (.+?) 失败: (.+?)$",
+  "en": "seed $1 failed: $2"
+ },
+ {
+  "re": "^task (.+?) 规划完成$",
+  "en": "task $1 planning completed"
+ },
+ {
+  "re": "^熔断状态落库失败: (.+?)$",
+  "en": "Failed to persist circuit-breaker status: $1"
+ },
+ {
+  "re": "^升级触发消息失败: (.+?)$",
+  "en": "failed to upgrade trigger message: $1"
+ },
+ {
+  "re": "^读取调用统计失败: (.+?)$",
+  "en": "failed to read call stats: $1"
+ },
+ {
+  "re": "^截断 WAL 失败：(.+?)$",
+  "en": "failed to truncate WAL: $1"
+ },
+ {
+  "re": "^(.+?) 个对话删除失败：(.+?)(.+?)$",
+  "en": "Failed to delete $1 conversations: $2$3"
+ },
+ {
+  "re": "^严重等级已改为「(.+?)」$",
+  "en": "Severity changed to \"$1\""
+ },
+ {
+  "re": "^处理状态已改为「(.+?)」$",
+  "en": "Handling status changed to \"$1\""
+ },
+ {
+  "re": "^加载复测状态失败：(.+?)$",
+  "en": "Failed to load retest status: $1"
+ },
+ {
+  "re": "^任务 #(.+?)（已删除）$",
+  "en": "Task #$1 (deleted)"
+ },
+ {
+  "re": "^加载任务资产失败：(.+?)$",
+  "en": "Failed to load task assets: $1"
+ },
+ {
+  "re": "^将资产 (.+?) 移出任务$",
+  "en": "Remove asset $1 from the task"
+ },
+ {
+  "re": "^ · 来源任务 #(.+?)$",
+  "en": " · Source task #$1"
+ },
+ {
+  "re": "^任务 #(.+?) 已重命名$",
+  "en": "Task #$1 renamed"
+ },
+ {
+  "re": "^(.+?) 个任务删除失败：(.+?)(.+?)$",
+  "en": "Failed to delete $1 tasks: $2$3"
+ },
+ {
+  "re": "^(.+?) 个任务操作失败：(.+?)(.+?)$",
+  "en": "Failed to operate on $1 tasks: $2$3"
+ },
+ {
+  "re": "^(.+?) 个任务未能移动：(.+?)(.+?)$",
+  "en": "Failed to move $1 tasks: $2$3"
+ },
+ {
+  "re": "^读取归档列表失败：(.+?)$",
+  "en": "Failed to read archive list: $1"
+ },
+ {
+  "re": "^最多关联 (.+?) 个任务$",
+  "en": "Link at most $1 tasks"
+ },
+ {
+  "re": "^确认删除 (.+?) “(.+?)”？(.+?)$",
+  "en": "Delete $1 “$2”?$3"
+ },
+ {
+  "re": "^读取重试策略失败：(.+?)$",
+  "en": "Failed to read retry policy: $1"
+ },
+ {
+  "re": "^定位的工具调用 #(.+?)$",
+  "en": "Located tool call #$1"
+ },
+ {
+  "re": "^发布包里没有找到 (.+?)$",
+  "en": "$1 was not found in the release archive"
+ },
+ {
+  "re": "^当前已是最新版本 (.+?)$",
+  "en": "Already on the latest version $1"
+ },
+ {
+  "re": "^标题最多 (.+?) 个字符$",
+  "en": "Title is limited to $1 characters"
+ },
+ {
+  "re": "^渠道类型 (.+?) 未注册$",
+  "en": "Channel type $1 is not registered"
+ },
+ {
+  "re": "^更新升级标记失败：(.+?)$",
+  "en": "failed to update upgrade marker: $1"
+ },
+ {
+  "re": "^清除升级标记失败：(.+?)$",
+  "en": "failed to clear upgrade marker: $1"
+ },
+ {
+  "re": "^读取轮询链失败: (.+?)$",
+  "en": "Failed to read round-robin chain: $1"
+ },
+ {
+  "re": "^数据库配置来源: (.+?)$",
+  "en": "Database configuration source: $1"
+ },
+ {
+  "re": "^读取触发器失败: (.+?)$",
+  "en": "failed to read trigger: $1"
+ },
+ {
+  "re": "^创建触发器失败: (.+?)$",
+  "en": "failed to create trigger: $1"
+ },
+ {
+  "re": "^回收索引空间失败：(.+?)$",
+  "en": "failed to reclaim index space: $1"
+ },
+ {
+  "re": "^已删除 (.+?) 个对话$",
+  "en": "Deleted $1 conversations"
+ },
+ {
+  "re": "^已删除 (.+?) 条资产$",
+  "en": "Deleted $1 assets"
+ },
+ {
+  "re": "^已保存；(.+?) 行无效$",
+  "en": "Saved; $1 invalid lines"
+ },
+ {
+  "re": "^已追加 (.+?) 条范围$",
+  "en": "Appended $1 ranges"
+ },
+ {
+  "re": "^资产树加载失败：(.+?)$",
+  "en": "Failed to load asset tree: $1"
+ },
+ {
+  "re": "^任务 #(.+?) 已暂停$",
+  "en": "Task #$1 paused"
+ },
+ {
+  "re": "^任务 #(.+?) 已继续(.+?)$",
+  "en": "Task #$1 resumed$2"
+ },
+ {
+  "re": "^任务 #(.+?) 已置顶$",
+  "en": "Task #$1 pinned"
+ },
+ {
+  "re": "^已删除 (.+?) 个任务$",
+  "en": "Deleted $1 tasks"
+ },
+ {
+  "re": "^已暂停 (.+?) 个任务$",
+  "en": "Paused $1 tasks"
+ },
+ {
+  "re": "^已继续 (.+?) 个任务(.+?)$",
+  "en": "Resumed $1 tasks$2"
+ },
+ {
+  "re": "^取消置顶任务 #(.+?)$",
+  "en": "Unpin task #$1"
+ },
+ {
+  "re": "^(.+?) 个任务无法还原$",
+  "en": "$1 tasks could not be restored"
+ },
+ {
+  "re": "^(.+?) 个归档无法删除$",
+  "en": "$1 archives could not be deleted"
+ },
+ {
+  "re": "^选择任务归档 #(.+?)$",
+  "en": "Select task archive #$1"
+ },
+ {
+  "re": "^已清空 (.+?) 条流量(.+?)$",
+  "en": "Cleared $1 traffic records$2"
+ },
+ {
+  "re": "^已上传 (.+?) 个文件$",
+  "en": "Uploaded $1 files"
+ },
+ {
+  "re": "^已加载 (.+?) 个模型$",
+  "en": "Loaded $1 models"
+ },
+ {
+  "re": "^删除文件夹「(.+?)」？$",
+  "en": "Delete folder \"$1\"?"
+ },
+ {
+  "re": "^已保存为版本 v(.+?)$",
+  "en": "Saved as version v$1"
+ },
+ {
+  "re": "^(.+?) MCP「(.+?)」可见$",
+  "en": "$1 MCP \"$2\" visibility"
+ },
+ {
+  "re": "^已显示全部 (.+?) 条$",
+  "en": "Showing all $1 entries"
+ },
+ {
+  "re": "^已绑定 (.+?) 条流量$",
+  "en": "$1 traffic entries bound"
+ },
+ {
+  "re": "^创建临时文件: (.+?)$",
+  "en": "Creating temporary file: $1"
+ },
+ {
+  "re": "^写出新二进制: (.+?)$",
+  "en": "Writing the new binary: $1"
+ },
+ {
+  "re": "^未知工具类型: (.+?)$",
+  "en": "Unknown tool type: $1"
+ },
+ {
+  "re": "^分派事件失败: (.+?)$",
+  "en": "failed to dispatch event: $1"
+ },
+ {
+  "re": "^读取渠道失败: (.+?)$",
+  "en": "failed to load channels: $1"
+ },
+ {
+  "re": "^绑定工具失败: (.+?)$",
+  "en": "failed to bind tools: $1"
+ },
+ {
+  "re": "^默认绑定失败: (.+?)$",
+  "en": "default binding failed: $1"
+ },
+ {
+  "re": "^(.+?) 个对话运行中$",
+  "en": "$1 conversations running"
+ },
+ {
+  "re": "^批量删除失败：(.+?)$",
+  "en": "Batch delete failed: $1"
+ },
+ {
+  "re": "^加载列表失败：(.+?)$",
+  "en": "Failed to load list: $1"
+ },
+ {
+  "re": "^请至少选择一个(.+?)$",
+  "en": "Please select at least one $1"
+ },
+ {
+  "re": "^，共 (.+?) 次调用$",
+  "en": ", $1 calls in total"
+ },
+ {
+  "re": "^新建会话失败：(.+?)$",
+  "en": "Failed to create session: $1"
+ },
+ {
+  "re": "^删除资产 (.+?) 条$",
+  "en": "Deleted $1 assets"
+ },
+ {
+  "re": "^删除流量 (.+?) 条$",
+  "en": "Deleted $1 traffic records"
+ },
+ {
+  "re": "^删除漏洞 (.+?) 条$",
+  "en": "Deleted $1 findings"
+ },
+ {
+  "re": "^任务已删除（(.+?)）$",
+  "en": "Task deleted ($1)"
+ },
+ {
+  "re": "^修改分类失败：(.+?)$",
+  "en": "Failed to change category: $1"
+ },
+ {
+  "re": "^任务 #(.+?) 名称$",
+  "en": "Task #$1 name"
+ },
+ {
+  "re": "^重命名任务 #(.+?)$",
+  "en": "Rename task #$1"
+ },
+ {
+  "re": "^归档 (.+?) 个任务$",
+  "en": "Archive $1 tasks"
+ },
+ {
+  "re": "^(.+?) · 节省 (.+?)%$",
+  "en": "$1 · Saved $2%"
+ },
+ {
+  "re": "^永久删除失败：(.+?)$",
+  "en": "Permanent deletion failed: $1"
+ },
+ {
+  "re": "^删除 (.+?) 个任务$",
+  "en": "Delete $1 tasks"
+ },
+ {
+  "re": "^已创建分类「(.+?)」$",
+  "en": "Created category \"$1\""
+ },
+ {
+  "re": "^创建分类失败：(.+?)$",
+  "en": "Failed to create category: $1"
+ },
+ {
+  "re": "^删除分类失败：(.+?)$",
+  "en": "Failed to delete category: $1"
+ },
+ {
+  "re": "^移动任务失败：(.+?)$",
+  "en": "Failed to move task: $1"
+ },
+ {
+  "re": "^，释放 (.+?) 存储$",
+  "en": ", freeing $1 of storage"
+ },
+ {
+  "re": "^读取目录失败：(.+?)$",
+  "en": "Failed to read directory: $1"
+ },
+ {
+  "re": "^打开文件失败：(.+?)$",
+  "en": "Failed to open file: $1"
+ },
+ {
+  "re": "^加载模型失败：(.+?)$",
+  "en": "Failed to load models: $1"
+ },
+ {
+  "re": "^加载模型出错：(.+?)$",
+  "en": "Error loading models: $1"
+ },
+ {
+  "re": "^发现 (.+?) 个工具$",
+  "en": "Found $1 tools"
+ },
+ {
+  "re": "^已创建文件夹：(.+?)$",
+  "en": "Created folder: $1"
+ },
+ {
+  "re": "^删除文件「(.+?)」？$",
+  "en": "Delete file \"$1\"?"
+ },
+ {
+  "re": "^已保存工具「(.+?)」$",
+  "en": "Saved tool \"$1\""
+ },
+ {
+  "re": "^累计调用 (.+?) 次$",
+  "en": "Total invocations: $1"
+ },
+ {
+  "re": "^(.+?) · 工具请求$",
+  "en": "$1 · Tool request"
+ },
+ {
+  "re": "^发起复测失败：(.+?)$",
+  "en": "Failed to start retest: $1"
+ },
+ {
+  "re": "^已选漏洞：#(.+?) (.+?)$",
+  "en": "Selected vulnerability: #$1 $2"
+ },
+ {
+  "re": "^加载模板失败：(.+?)$",
+  "en": "Failed to load template: $1"
+ },
+ {
+  "re": "^绑定 (.+?) 条流量$",
+  "en": "Bind $1 traffic entries"
+ },
+ {
+  "re": "^上传失败: (.+?) (.+?)$",
+  "en": "Upload failed: $1 $2"
+ },
+ {
+  "re": "^最多 (.+?) 个字符$",
+  "en": "At most $1 characters"
+ },
+ {
+  "re": "^写入校验和: (.+?)$",
+  "en": "Writing checksum: $1"
+ },
+ {
+  "re": "^暂存新版本: (.+?)$",
+  "en": "Staging the new version: $1"
+ },
+ {
+  "re": "^打开发布包: (.+?)$",
+  "en": "Opening the release archive: $1"
+ },
+ {
+  "re": "^下载中 (.+?) / (.+?)$",
+  "en": "Downloading $1 / $2"
+ },
+ {
+  "re": "^建目录失败: (.+?)$",
+  "en": "Failed to create directory: $1"
+ },
+ {
+  "re": "^工具不存在: (.+?)$",
+  "en": "Tool does not exist: $1"
+ },
+ {
+  "re": "^工具发现失败：(.+?)$",
+  "en": "Tool discovery failed: $1"
+ },
+ {
+  "re": "^(.+?) 连接失败: (.+?)$",
+  "en": "$1 connection failed: $2"
+ },
+ {
+  "re": "^压实索引失败：(.+?)$",
+  "en": "failed to compact index: $1"
+ },
+ {
+  "re": "^选择对话「(.+?)」$",
+  "en": "Select conversation \"$1\""
+ },
+ {
+  "re": "^管理对话「(.+?)」$",
+  "en": "Manage conversation \"$1\""
+ },
+ {
+  "re": "^未找到发现 (.+?)$",
+  "en": "Finding $1 not found"
+ },
+ {
+  "re": "^已标记为「(.+?)」$",
+  "en": "Marked as \"$1\""
+ },
+ {
+  "re": "^(.+?)（任务 #(.+?)）$",
+  "en": "$1 (Task #$2)"
+ },
+ {
+  "re": "^查看任务 #(.+?)$",
+  "en": "View task #$1"
+ },
+ {
+  "re": "^共 (.+?) 条发现$",
+  "en": "$1 findings in total"
+ },
+ {
+  "re": "^重命名失败：(.+?)$",
+  "en": "Rename failed: $1"
+ },
+ {
+  "re": "^置顶任务 #(.+?)$",
+  "en": "Pin task #$1"
+ },
+ {
+  "re": "^归档任务 #(.+?)$",
+  "en": "Archive Task #$1"
+ },
+ {
+  "re": "^拖动任务 #(.+?)$",
+  "en": "Drag task #$1"
+ },
+ {
+  "re": "^选择目标（(.+?)）$",
+  "en": "Select targets ($1)"
+ },
+ {
+  "re": "^已熔断 · (.+?)$",
+  "en": "Circuit broken · $1"
+ },
+ {
+  "re": "^类型含 (.+?) 词$",
+  "en": "Type includes $1 terms"
+ },
+ {
+  "re": "^发现新版本 (.+?)$",
+  "en": "New version $1 found"
+ },
+ {
+  "re": "^(.+?) 个被调用过$",
+  "en": "$1 invoked"
+ },
+ {
+  "re": "^已创建文件：(.+?)$",
+  "en": "Created file: $1"
+ },
+ {
+  "re": "^工具调用\\((.+?)\\)$",
+  "en": "Tool calls ($1)"
+ },
+ {
+  "re": "^审批详情 #(.+?)$",
+  "en": "Approval details #$1"
+ },
+ {
+  "re": "^上传失败: (.+?)$",
+  "en": "Upload failed: $1"
+ },
+ {
+  "re": "^下载失败: (.+?)$",
+  "en": "Download failed: $1"
+ },
+ {
+  "re": "^上传失败\\((.+?)\\)$",
+  "en": "Upload failed ($1)"
+ },
+ {
+  "re": "^下载 (.+?)（(.+?)）…$",
+  "en": "Downloading $1 ($2)…"
+ },
+ {
+  "re": "^下载中断: (.+?)$",
+  "en": "Download interrupted: $1"
+ },
+ {
+  "re": "^落盘失败: (.+?)$",
+  "en": "Failed to write to disk: $1"
+ },
+ {
+  "re": "^保存失败: (.+?)$",
+  "en": "Save failed: $1"
+ },
+ {
+  "re": "^配置文件: (.+?)$",
+  "en": "config file: $1"
+ },
+ {
+  "re": "^加载失败: (.+?)$",
+  "en": "load failed: $1"
+ },
+ {
+  "re": "^(.+?) / (.+?) 个$",
+  "en": "$1 / $2"
+ },
+ {
+  "re": "^已选 (.+?) 个$",
+  "en": "$1 selected"
+ },
+ {
+  "re": "^删除企业 (.+?)$",
+  "en": "Delete enterprise $1"
+ },
+ {
+  "re": "^删除资产 (.+?)$",
+  "en": "Delete asset $1"
+ },
+ {
+  "re": "^删除资产 (.+?)$",
+  "en": "Delete asset $1"
+ },
+ {
+  "re": "^删除资产 (.+?)$",
+  "en": "Delete asset $1"
+ },
+ {
+  "re": "^删除资产 (.+?)$",
+  "en": "Delete asset $1"
+ },
+ {
+  "re": "^保存失败：(.+?)$",
+  "en": "Save failed: $1"
+ },
+ {
+  "re": "^保存失败：(.+?)$",
+  "en": "Save failed: $1"
+ },
+ {
+  "re": "^导出失败：(.+?)$",
+  "en": "Export failed: $1"
+ },
+ {
+  "re": "^更新失败：(.+?)$",
+  "en": "Update failed: $1"
+ },
+ {
+  "re": "^保存失败：(.+?)$",
+  "en": "Save failed: $1"
+ },
+ {
+  "re": "^删除失败：(.+?)$",
+  "en": "Delete failed: $1"
+ },
+ {
+  "re": "^提交失败：(.+?)$",
+  "en": "Submission failed: $1"
+ },
+ {
+  "re": "^按(.+?)等级筛选$",
+  "en": "Filter by $1 severity"
+ },
+ {
+  "re": "^创建失败：(.+?)$",
+  "en": "Creation failed: $1"
+ },
+ {
+  "re": "^同步失败：(.+?)$",
+  "en": "Sync failed: $1"
+ },
+ {
+  "re": "^归档失败：(.+?)$",
+  "en": "Archive failed: $1"
+ },
+ {
+  "re": "^新增失败：(.+?)$",
+  "en": "Add failed: $1"
+ },
+ {
+  "re": "^移出失败：(.+?)$",
+  "en": "Remove failed: $1"
+ },
+ {
+  "re": "^还有 (.+?) 个(.+?)$",
+  "en": "$1 more $2"
+ },
+ {
+  "re": "^选择漏洞：(.+?)$",
+  "en": "Select finding: $1"
+ },
+ {
+  "re": "^上传失败：(.+?)$",
+  "en": "Upload failed: $1"
+ },
+ {
+  "re": "^发送失败：(.+?)$",
+  "en": "Send failed: $1"
+ },
+ {
+  "re": "^发送失败：(.+?)$",
+  "en": "Send failed: $1"
+ },
+ {
+  "re": "^当前配置：(.+?)$",
+  "en": "Current config: $1"
+ },
+ {
+  "re": "^按(.+?)倒序排序$",
+  "en": "Sort by $1 descending"
+ },
+ {
+  "re": "^保存失败：(.+?)$",
+  "en": "Save failed: $1"
+ },
+ {
+  "re": "^选择任务 (.+?)$",
+  "en": "Select task $1"
+ },
+ {
+  "re": "^还原失败：(.+?)$",
+  "en": "Restore failed: $1"
+ },
+ {
+  "re": "^重试失败：(.+?)$",
+  "en": "Retry failed: $1"
+ },
+ {
+  "re": "^删除中 (.+?)/(.+?)$",
+  "en": "Deleting $1/$2"
+ },
+ {
+  "re": "^(.+?)分类失败：(.+?)$",
+  "en": "Failed to $1 category: $2"
+ },
+ {
+  "re": "^清空失败：(.+?)$",
+  "en": "Clear failed: $1"
+ },
+ {
+  "re": "^选择流量 (.+?)$",
+  "en": "Select traffic $1"
+ },
+ {
+  "re": "^保存失败：(.+?)$",
+  "en": "Save failed: $1"
+ },
+ {
+  "re": "^删除失败：(.+?)$",
+  "en": "Delete failed: $1"
+ },
+ {
+  "re": "^上传失败：(.+?)$",
+  "en": "Upload failed: $1"
+ },
+ {
+  "re": "^创建失败：(.+?)$",
+  "en": "Create failed: $1"
+ },
+ {
+  "re": "^下载失败：(.+?)$",
+  "en": "Download failed: $1"
+ },
+ {
+  "re": "^设置失败：(.+?)$",
+  "en": "Failed to set: $1"
+ },
+ {
+  "re": "^恢复失败：(.+?)$",
+  "en": "Failed to restore: $1"
+ },
+ {
+  "re": "^连接失败：(.+?)$",
+  "en": "Connection failed: $1"
+ },
+ {
+  "re": "^测试出错：(.+?)$",
+  "en": "Test error: $1"
+ },
+ {
+  "re": "^激活失败：(.+?)$",
+  "en": "Activation failed: $1"
+ },
+ {
+  "re": "^（尾号 (.+?)）$",
+  "en": "(ending in $1)"
+ },
+ {
+  "re": "^排除 (.+?) 词$",
+  "en": "Excludes $1 terms"
+ },
+ {
+  "re": "^修改失败：(.+?)$",
+  "en": "Change failed: $1"
+ },
+ {
+  "re": "^无法定位：(.+?)$",
+  "en": "Unable to locate: $1"
+ },
+ {
+  "re": "^找到 (.+?) 条$",
+  "en": "Found $1 items"
+ },
+ {
+  "re": "^上移证据 (.+?)$",
+  "en": "Move evidence $1 up"
+ },
+ {
+  "re": "^下移证据 (.+?)$",
+  "en": "Move evidence $1 down"
+ },
+ {
+  "re": "^移除引用 (.+?)$",
+  "en": "Remove reference $1"
+ },
+ {
+  "re": "^删除失败：(.+?)$",
+  "en": "Delete failed: $1"
+ },
+ {
+  "re": "^下载 (.+?): (.+?)$",
+  "en": "Downloading $1: $2"
+ },
+ {
+  "re": "^读取 (.+?): (.+?)$",
+  "en": "Reading $1: $2"
+ },
+ {
+  "re": "^解压 (.+?): (.+?)$",
+  "en": "Extracting $1: $2"
+ },
+ {
+  "re": "^文件过大：(.+?)$",
+  "en": "File too large: $1"
+ },
+ {
+  "re": "^安装失败：(.+?)$",
+  "en": "Installation failed: $1"
+ },
+ {
+  "re": "^跳过自举：(.+?)$",
+  "en": "skipping bootstrap: $1"
+ },
+ {
+  "re": "^更新失败：(.+?)$",
+  "en": "update failed: $1"
+ },
+ {
+  "re": "^展开「(.+?)」$",
+  "en": "Expand \"$1\""
+ },
+ {
+  "re": "^收起「(.+?)」$",
+  "en": "Collapse \"$1\""
+ },
+ {
+  "re": "^共 (.+?) 个$",
+  "en": "$1 total"
+ },
+ {
+  "re": "^(.+?) 次请求$",
+  "en": "$1 requests"
+ },
+ {
+  "re": "^任务 #(.+?)$",
+  "en": "Task #$1"
+ },
+ {
+  "re": "^配置 #(.+?)$",
+  "en": "Configuration #$1"
+ },
+ {
+  "re": "^(.+?) 个备用$",
+  "en": "$1 backups"
+ },
+ {
+  "re": "^(.+?) 分钟前$",
+  "en": "$1 minutes ago"
+ },
+ {
+  "re": "^(.+?) 小时前$",
+  "en": "$1 hours ago"
+ },
+ {
+  "re": "^节点 #(.+?)$",
+  "en": "Node #$1"
+ },
+ {
+  "re": "^企业 #(.+?)$",
+  "en": "Company #$1"
+ },
+ {
+  "re": "^任务 #(.+?)$",
+  "en": "Task #$1"
+ },
+ {
+  "re": "^压缩前 (.+?)$",
+  "en": "Before compression $1"
+ },
+ {
+  "re": "^企业 #(.+?)$",
+  "en": "Company #$1"
+ },
+ {
+  "re": "^(.+?) 个任务$",
+  "en": "$1 tasks"
+ },
+ {
+  "re": "^任务 #(.+?)$",
+  "en": "Task #$1"
+ },
+ {
+  "re": "^已激活：(.+?)$",
+  "en": "Activated: $1"
+ },
+ {
+  "re": "^已删除：(.+?)$",
+  "en": "Deleted: $1"
+ },
+ {
+  "re": "^已删除：(.+?)$",
+  "en": "Deleted: $1"
+ },
+ {
+  "re": "^(.+?)「(.+?)」可见$",
+  "en": "$1 visibility to \"$2\""
+ },
+ {
+  "re": "^(.+?) 个工具$",
+  "en": "$1 tools"
+ },
+ {
+  "re": "^已删除：(.+?)$",
+  "en": "Deleted: $1"
+ },
+ {
+  "re": "^(.+?) 个任务$",
+  "en": "$1 tasks"
+ },
+ {
+  "re": "^(.+?) 个资产$",
+  "en": "$1 assets"
+ },
+ {
+  "re": "^更新到 (.+?)$",
+  "en": "Update to $1"
+ },
+ {
+  "re": "^已删除：(.+?)$",
+  "en": "Deleted: $1"
+ },
+ {
+  "re": "^任务 #(.+?)$",
+  "en": "Task #$1"
+ },
+ {
+  "re": "^(.+?)工具「(.+?)」$",
+  "en": "$1 tool \"$2\""
+ },
+ {
+  "re": "^对话 #(.+?)$",
+  "en": "Conversation #$1"
+ },
+ {
+  "re": "^(.+?)审批 #(.+?)$",
+  "en": "$1 approval #$2"
+ },
+ {
+  "re": "^规则 #(.+?)$",
+  "en": "Rule #$1"
+ },
+ {
+  "re": "^配置 #(.+?)$",
+  "en": "Configuration #$1"
+ },
+ {
+  "re": "^(.+?)失败：(.+?)$",
+  "en": "$1 failed: $2"
+ },
+ {
+  "re": "^(.+?)s 前$",
+  "en": "$1s ago"
+ },
+ {
+  "re": "^(.+?)m 前$",
+  "en": "$1m ago"
+ },
+ {
+  "re": "^(.+?)h 前$",
+  "en": "$1h ago"
+ },
+ {
+  "re": "^(.+?)d 前$",
+  "en": "$1d ago"
+ },
+ {
+  "re": "^严重 (.+?)$",
+  "en": "Critical $1"
+ },
+ {
+  "re": "^高危 (.+?)$",
+  "en": "High $1"
+ },
+ {
+  "re": "^(.+?) 天前$",
+  "en": "$1 days ago"
+ },
+ {
+  "re": "^(.+?)失败：(.+?)$",
+  "en": "Failed to $1: $2"
+ },
+ {
+  "re": "^(.+?)失败：(.+?)$",
+  "en": "Failed to $1: $2"
+ },
+ {
+  "re": "^(.+?)失败：(.+?)$",
+  "en": "$1 failed: $2"
+ },
+ {
+  "re": "^回复：(.+?)$",
+  "en": "Reply: $1"
+ },
+ {
+  "re": "^编辑：(.+?)$",
+  "en": "Edit: $1"
+ },
+ {
+  "re": "^默认 (.+?)$",
+  "en": "Default $1"
+ },
+ {
+  "re": "^固定 (.+?)$",
+  "en": "Fixed $1"
+ },
+ {
+  "re": "^(.+?) 分钟$",
+  "en": "$1 minutes"
+ },
+ {
+  "re": "^(.+?) 小时$",
+  "en": "$1 hours"
+ },
+ {
+  "re": "^编辑 (.+?)$",
+  "en": "Edit $1"
+ },
+ {
+  "re": "^每 (.+?)s$",
+  "en": "every $1s"
+ },
+ {
+  "re": "^任务 (.+?)$",
+  "en": "Task $1"
+ },
+ {
+  "re": "^默认(.+?)$",
+  "en": "Default $1"
+ },
+ {
+  "re": "^(.+?)中…$",
+  "en": "$1…"
+ },
+ {
+  "re": "^确认(.+?)$",
+  "en": "Confirm $1"
+ },
+ {
+  "re": "^(.+?) 秒$",
+  "en": "$1 seconds"
+ },
+ {
+  "re": "^复制(.+?)$",
+  "en": "Copy $1"
+ },
+ {
+  "re": "^搜索(.+?)$",
+  "en": "Search $1"
+ }
+]

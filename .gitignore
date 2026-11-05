@@ -1,0 +1,29 @@
+# secrets and runtime state
+.env
+data/
+# Postgres data directory. Large, machine-specific, and contains live DB pages.
+pgdata/
+
+# fetched upstream source (run fetch-source.ps1)
+src/
+.stage/
+artex-v*.zip
+
+# build leftovers
+node_modules/
+web/out/
+server/webui/dist/
+artex
+artex.exe
+*.db
+*.log
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# dev-only artifacts
+uncovered.json
+patches/english-ui/rewrite-zh.mjs

@@ -1,0 +1,15 @@
+.git
+.env
+.env.*
+!.env.example
+data
+pgdata
+.stage
+artex-v*.zip
+**/node_modules
+**/.next
+**/out
+**/*.log
+**/*.db
+src/server/webui/dist
+uncovered.json

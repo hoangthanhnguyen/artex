@@ -1,0 +1,17 @@
+# Keep line endings deterministic across machines. Scripts and Dockerfiles
+# MUST stay LF: a CRLF shell script fails on Linux with "bad interpreter".
+* text=auto eol=lf
+
+*.sh   text eol=lf
+*.mjs  text eol=lf
+*.js   text eol=lf
+*.py   text eol=lf
+*.php  text eol=lf
+Dockerfile text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+
+# Binary assets git must not touch.
+*.png binary
+*.jpg binary
+*.zip binary
